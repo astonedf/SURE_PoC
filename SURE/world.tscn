@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://ch8lca5i2wtwb"]
+
+[ext_resource type="PackedScene" uid="uid://fj0yqymwnctq" path="res://tilemap.tscn" id="1_akdpj"]
+[ext_resource type="Texture2D" uid="uid://bn5n3r4lcog2j" path="res://Buildings/building_medium_blue_a.png" id="2_rb7q1"]
+[ext_resource type="Texture2D" uid="uid://cyunfwdio1orr" path="res://Buildings/building_small_red_a.png" id="3_l4nkt"]
+[ext_resource type="Texture2D" uid="uid://oddt0gbctw75" path="res://Buildings/gas_station_a.png" id="4_5jebq"]
+[ext_resource type="Texture2D" uid="uid://dq5cdm6dllp74" path="res://Buildings/house_medium_brown_a.png" id="5_fyi47"]
+[ext_resource type="Texture2D" uid="uid://63w8wmwb21lk" path="res://Buildings/house_small_blue_b.png" id="6_dms1g"]
+[ext_resource type="Texture2D" uid="uid://dd4usnroeap8y" path="res://Buildings/warehouse_orange_b.png" id="7_4e8xx"]
+[ext_resource type="Texture2D" uid="uid://3okwhgof3kjw" path="res://Buildings/water_tower_a_damaged.png" id="8_8ea0j"]
+
+[node name="World" type="Node2D"]
+
+[node name="Tilemap" parent="." instance=ExtResource("1_akdpj")]
+
+[node name="BuildingMediumBlueA" type="Sprite2D" parent="."]
+position = Vector2(685, 228)
+texture = ExtResource("2_rb7q1")
+
+[node name="BuildingSmallRedA" type="Sprite2D" parent="."]
+position = Vector2(757, 283)
+texture = ExtResource("3_l4nkt")
+
+[node name="GasStationA" type="Sprite2D" parent="."]
+position = Vector2(1011, 157)
+texture = ExtResource("4_5jebq")
+
+[node name="HouseMediumBrownA" type="Sprite2D" parent="."]
+position = Vector2(1253, 369)
+texture = ExtResource("5_fyi47")
+
+[node name="HouseSmallBlueB" type="Sprite2D" parent="."]
+position = Vector2(426, 377)
+texture = ExtResource("6_dms1g")
+
+[node name="WarehouseOrangeB" type="Sprite2D" parent="."]
+position = Vector2(352, 221)
+texture = ExtResource("7_4e8xx")
+
+[node name="WaterTowerADamaged" type="Sprite2D" parent="."]
+position = Vector2(1006, 276)
+texture = ExtResource("8_8ea0j")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
