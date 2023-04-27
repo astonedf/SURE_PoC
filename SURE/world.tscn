@@ -1,29 +1,31 @@
-[gd_scene load_steps=9 format=3 uid="uid://ch8lca5i2wtwb"]
+[gd_scene load_steps=11 format=3 uid="uid://ch8lca5i2wtwb"]
 
 [ext_resource type="PackedScene" uid="uid://fj0yqymwnctq" path="res://tilemap.tscn" id="1_akdpj"]
-[ext_resource type="Texture2D" uid="uid://bn5n3r4lcog2j" path="res://Buildings/building_medium_blue_a.png" id="2_rb7q1"]
-[ext_resource type="Texture2D" uid="uid://cyunfwdio1orr" path="res://Buildings/building_small_red_a.png" id="3_l4nkt"]
-[ext_resource type="Texture2D" uid="uid://oddt0gbctw75" path="res://Buildings/gas_station_a.png" id="4_5jebq"]
+[ext_resource type="Texture2D" uid="uid://bov80q4d8x5jl" path="res://Buildings/house_small_yellow_b.png" id="2_d5ki8"]
 [ext_resource type="Texture2D" uid="uid://dq5cdm6dllp74" path="res://Buildings/house_medium_brown_a.png" id="5_fyi47"]
 [ext_resource type="Texture2D" uid="uid://63w8wmwb21lk" path="res://Buildings/house_small_blue_b.png" id="6_dms1g"]
 [ext_resource type="Texture2D" uid="uid://dd4usnroeap8y" path="res://Buildings/warehouse_orange_b.png" id="7_4e8xx"]
-[ext_resource type="Texture2D" uid="uid://3okwhgof3kjw" path="res://Buildings/water_tower_a_damaged.png" id="8_8ea0j"]
+[ext_resource type="PackedScene" uid="uid://6rs6rw3sexmm" path="res://energy_plant.tscn" id="7_w4pbu"]
+[ext_resource type="Texture2D" uid="uid://ywn3w3u7101f" path="res://Buildings/building_small_gray_b.png" id="8_2hy6p"]
+[ext_resource type="PackedScene" uid="uid://c16uhcush6cp1" path="res://ui.tscn" id="9_h0at6"]
+[ext_resource type="Texture2D" uid="uid://dfb8j0dgkthdj" path="res://Buildings/water_tower_b_damaged.png" id="9_u0558"]
+[ext_resource type="Texture2D" uid="uid://bpqqad3qr0s0a" path="res://Buildings/house_small_purple_a.png" id="10_y5scj"]
 
 [node name="World" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -7.0
+offset_top = -9.0
+offset_right = 1807.0
+offset_bottom = 725.0
+mouse_filter = 1
+color = Color(0.489691, 0.374696, 0.205397, 1)
 
 [node name="Tilemap" parent="." instance=ExtResource("1_akdpj")]
 
 [node name="BuildingMediumBlueA" type="Sprite2D" parent="."]
-position = Vector2(685, 228)
-texture = ExtResource("2_rb7q1")
-
-[node name="BuildingSmallRedA" type="Sprite2D" parent="."]
-position = Vector2(757, 283)
-texture = ExtResource("3_l4nkt")
-
-[node name="GasStationA" type="Sprite2D" parent="."]
-position = Vector2(1011, 157)
-texture = ExtResource("4_5jebq")
+position = Vector2(680, 52)
+texture = ExtResource("2_d5ki8")
 
 [node name="HouseMediumBrownA" type="Sprite2D" parent="."]
 position = Vector2(1253, 369)
@@ -37,9 +39,41 @@ texture = ExtResource("6_dms1g")
 position = Vector2(352, 221)
 texture = ExtResource("7_4e8xx")
 
-[node name="WaterTowerADamaged" type="Sprite2D" parent="."]
-position = Vector2(1006, 276)
-texture = ExtResource("8_8ea0j")
+[node name="EnergyPlant" parent="." instance=ExtResource("7_w4pbu")]
+position = Vector2(670, 243)
+energy = 50
+cost = 75
 
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
+[node name="Sprite2D" parent="EnergyPlant" index="0"]
+texture = ExtResource("8_2hy6p")
+
+[node name="CollisionPolygon2D" parent="EnergyPlant/Area2D" index="0"]
+polygon = PackedVector2Array(-16, 65, -84, 31, -89, -28, -22, -64, 46, -31, 45, 28)
+
+[node name="Label" parent="EnergyPlant/ColorRect" index="0"]
+layout_mode = 0
+text = "Nuclear"
+
+[node name="EnergyPlant2" parent="." instance=ExtResource("7_w4pbu")]
+position = Vector2(939, 252)
+energy = 100
+cost = 25
+
+[node name="Sprite2D" parent="EnergyPlant2" index="0"]
+texture = ExtResource("9_u0558")
+
+[node name="CollisionPolygon2D" parent="EnergyPlant2/Area2D" index="0"]
+polygon = PackedVector2Array(-10, 67, -80, 37, -83, 11, -54, -4, -49, -61, -13, -69, 18, -57, 17, -11, 51, 11, 54, 35)
+
+[node name="Label" parent="EnergyPlant2/ColorRect" index="0"]
+layout_mode = 0
+text = "Coal"
+
+[node name="UI" parent="." instance=ExtResource("9_h0at6")]
+
+[node name="HouseSmallPurpleA" type="Sprite2D" parent="."]
+position = Vector2(1115, 165)
+texture = ExtResource("10_y5scj")
+
+[editable path="EnergyPlant"]
+[editable path="EnergyPlant2"]
