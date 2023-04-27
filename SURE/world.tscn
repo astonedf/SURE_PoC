@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ch8lca5i2wtwb"]
+[gd_scene load_steps=16 format=3 uid="uid://ch8lca5i2wtwb"]
 
 [ext_resource type="PackedScene" uid="uid://fj0yqymwnctq" path="res://tilemap.tscn" id="1_akdpj"]
 [ext_resource type="Texture2D" uid="uid://bov80q4d8x5jl" path="res://Buildings/house_small_yellow_b.png" id="2_d5ki8"]
@@ -10,6 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://c16uhcush6cp1" path="res://ui.tscn" id="9_h0at6"]
 [ext_resource type="Texture2D" uid="uid://dfb8j0dgkthdj" path="res://Buildings/water_tower_b_damaged.png" id="9_u0558"]
 [ext_resource type="Texture2D" uid="uid://bpqqad3qr0s0a" path="res://Buildings/house_small_purple_a.png" id="10_y5scj"]
+[ext_resource type="Texture2D" uid="uid://cvdjme5hto1ao" path="res://People/people_1_b.png" id="11_f4twp"]
+[ext_resource type="Texture2D" uid="uid://81u7c4lqok50" path="res://People/people_2_a.png" id="12_0g8hv"]
+[ext_resource type="Texture2D" uid="uid://dkoss0mydp0kj" path="res://People/people_4_b.png" id="13_3vik6"]
+[ext_resource type="Texture2D" uid="uid://bhfxrylm2sf5h" path="res://People/people_5_d.png" id="14_1qbx6"]
+[ext_resource type="Texture2D" uid="uid://cisyqwdcowmsj" path="res://People/people_6_b.png" id="15_lnivg"]
 
 [node name="World" type="Node2D"]
 
@@ -51,7 +56,6 @@ texture = ExtResource("8_2hy6p")
 polygon = PackedVector2Array(-16, 65, -84, 31, -89, -28, -22, -64, 46, -31, 45, 28)
 
 [node name="Label" parent="EnergyPlant/ColorRect" index="0"]
-layout_mode = 0
 text = "Nuclear"
 
 [node name="EnergyPlant2" parent="." instance=ExtResource("7_w4pbu")]
@@ -66,7 +70,6 @@ texture = ExtResource("9_u0558")
 polygon = PackedVector2Array(-10, 67, -80, 37, -83, 11, -54, -4, -49, -61, -13, -69, 18, -57, 17, -11, 51, 11, 54, 35)
 
 [node name="Label" parent="EnergyPlant2/ColorRect" index="0"]
-layout_mode = 0
 text = "Coal"
 
 [node name="UI" parent="." instance=ExtResource("9_h0at6")]
@@ -74,6 +77,26 @@ text = "Coal"
 [node name="HouseSmallPurpleA" type="Sprite2D" parent="."]
 position = Vector2(1115, 165)
 texture = ExtResource("10_y5scj")
+
+[node name="People1B" type="Sprite2D" parent="."]
+position = Vector2(471, 380)
+texture = ExtResource("11_f4twp")
+
+[node name="People2A" type="Sprite2D" parent="."]
+position = Vector2(341, 289)
+texture = ExtResource("12_0g8hv")
+
+[node name="People4B" type="Sprite2D" parent="."]
+position = Vector2(826, 298)
+texture = ExtResource("13_3vik6")
+
+[node name="People5D" type="Sprite2D" parent="."]
+position = Vector2(845, 305)
+texture = ExtResource("14_1qbx6")
+
+[node name="People6B" type="Sprite2D" parent="."]
+position = Vector2(1090, 197)
+texture = ExtResource("15_lnivg")
 
 [editable path="EnergyPlant"]
 [editable path="EnergyPlant2"]
