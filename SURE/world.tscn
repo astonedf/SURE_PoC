@@ -39,7 +39,7 @@ position = Vector2(980, 369)
 texture = ExtResource("5_fyi47")
 
 [node name="HouseSmallBlueB" type="Sprite2D" parent="."]
-position = Vector2(426, 377)
+position = Vector2(242, 369)
 texture = ExtResource("6_dms1g")
 
 [node name="WarehouseOrangeB" type="Sprite2D" parent="."]
@@ -84,7 +84,7 @@ position = Vector2(915, 181)
 texture = ExtResource("10_y5scj")
 
 [node name="People1B" type="Sprite2D" parent="."]
-position = Vector2(471, 380)
+position = Vector2(271, 396)
 texture = ExtResource("11_f4twp")
 
 [node name="People2A" type="Sprite2D" parent="."]
