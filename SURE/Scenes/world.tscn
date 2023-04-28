@@ -1,0 +1,116 @@
+[gd_scene load_steps=17 format=3 uid="uid://c23oje7wdhlyi"]
+
+[ext_resource type="PackedScene" uid="uid://bppme8g1xtgg8" path="res://Scenes/tilemap.tscn" id="1_8jtqx"]
+[ext_resource type="Texture2D" uid="uid://bov80q4d8x5jl" path="res://Assets/Buildings/house_small_yellow_b.png" id="2_8wmjp"]
+[ext_resource type="Texture2D" uid="uid://dq5cdm6dllp74" path="res://Assets/Buildings/house_medium_brown_a.png" id="3_kes3l"]
+[ext_resource type="Texture2D" uid="uid://63w8wmwb21lk" path="res://Assets/Buildings/house_small_blue_b.png" id="4_uogwk"]
+[ext_resource type="Texture2D" uid="uid://dd4usnroeap8y" path="res://Assets/Buildings/warehouse_orange_b.png" id="5_ex311"]
+[ext_resource type="Texture2D" uid="uid://bpqqad3qr0s0a" path="res://Assets/Buildings/house_small_purple_a.png" id="6_8a8ec"]
+[ext_resource type="PackedScene" uid="uid://ct4blqwh4y6ab" path="res://Scenes/energy_plant.tscn" id="7_6x5m2"]
+[ext_resource type="Texture2D" uid="uid://81u7c4lqok50" path="res://Assets/People/people_2_a.png" id="7_ljggt"]
+[ext_resource type="Texture2D" uid="uid://ywn3w3u7101f" path="res://Assets/Buildings/building_small_gray_b.png" id="8_7d7gc"]
+[ext_resource type="Texture2D" uid="uid://cvdjme5hto1ao" path="res://Assets/People/people_1_b.png" id="8_wpqsw"]
+[ext_resource type="Texture2D" uid="uid://dkoss0mydp0kj" path="res://Assets/People/people_4_b.png" id="9_a5p6h"]
+[ext_resource type="Texture2D" uid="uid://dfb8j0dgkthdj" path="res://Assets/Buildings/water_tower_b_damaged.png" id="9_swixi"]
+[ext_resource type="PackedScene" uid="uid://c16uhcush6cp1" path="res://Scenes/ui.tscn" id="10_3jten"]
+[ext_resource type="Texture2D" uid="uid://bhfxrylm2sf5h" path="res://Assets/People/people_5_d.png" id="10_qpcoi"]
+[ext_resource type="Texture2D" uid="uid://bskqc02rhk72n" path="res://Assets/People/people_6_c.png" id="11_col61"]
+[ext_resource type="PackedScene" uid="uid://cpg775rckpcto" path="res://Scenes/build_button.tscn" id="16_pnu0i"]
+
+[node name="World" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -116.0
+offset_top = -23.0
+offset_right = 1346.0
+offset_bottom = 711.0
+mouse_filter = 1
+color = Color(0.489691, 0.374696, 0.205397, 1)
+
+[node name="Tilemap" parent="." instance=ExtResource("1_8jtqx")]
+position = Vector2(-82, 88)
+scale = Vector2(0.75, 0.75)
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="BuildingMediumBlueA" type="Sprite2D" parent="Props"]
+position = Vector2(472, 109)
+texture = ExtResource("2_8wmjp")
+
+[node name="HouseMediumBrownA" type="Sprite2D" parent="Props"]
+position = Vector2(980, 369)
+texture = ExtResource("3_kes3l")
+
+[node name="HouseSmallBlueB" type="Sprite2D" parent="Props"]
+position = Vector2(242, 369)
+texture = ExtResource("4_uogwk")
+
+[node name="WarehouseOrangeB" type="Sprite2D" parent="Props"]
+position = Vector2(227, 225)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_ex311")
+
+[node name="HouseSmallPurpleA" type="Sprite2D" parent="Props"]
+position = Vector2(915, 181)
+texture = ExtResource("6_8a8ec")
+
+[node name="People2A" type="Sprite2D" parent="Props"]
+position = Vector2(341, 289)
+texture = ExtResource("7_ljggt")
+
+[node name="People1B" type="Sprite2D" parent="Props"]
+position = Vector2(271, 396)
+texture = ExtResource("8_wpqsw")
+
+[node name="People4B" type="Sprite2D" parent="Props"]
+position = Vector2(826, 298)
+texture = ExtResource("9_a5p6h")
+
+[node name="People5D" type="Sprite2D" parent="Props"]
+position = Vector2(845, 305)
+texture = ExtResource("10_qpcoi")
+
+[node name="People6B" type="Sprite2D" parent="Props"]
+position = Vector2(874, 205)
+texture = ExtResource("11_col61")
+
+[node name="EnergyPlant" parent="." instance=ExtResource("7_6x5m2")]
+position = Vector2(439, 259)
+energy = 350
+cost = 75
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="EnergyPlant" index="0"]
+texture = ExtResource("8_7d7gc")
+
+[node name="Label" parent="EnergyPlant/ColorRect" index="0"]
+text = "Nuclear"
+
+[node name="CollisionPolygon2D" parent="EnergyPlant/Area2D" index="0"]
+polygon = PackedVector2Array(-16, 65, -84, 31, -89, -28, -22, -64, 46, -31, 45, 28)
+
+[node name="EnergyPlant2" parent="." instance=ExtResource("7_6x5m2")]
+position = Vector2(741, 212)
+energy = 100
+cost = 25
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="EnergyPlant2" index="0"]
+texture = ExtResource("9_swixi")
+
+[node name="Label" parent="EnergyPlant2/ColorRect" index="0"]
+text = "Coal"
+
+[node name="CollisionPolygon2D" parent="EnergyPlant2/Area2D" index="0"]
+polygon = PackedVector2Array(-10, 67, -80, 37, -83, 11, -54, -4, -49, -61, -13, -69, 18, -57, 17, -11, 51, 11, 54, 35)
+
+[node name="UI" parent="." instance=ExtResource("10_3jten")]
+
+[node name="BuildButton" parent="." instance=ExtResource("16_pnu0i")]
+offset_left = 438.0
+offset_top = 401.0
+offset_right = 486.0
+offset_bottom = 432.0
+
+[editable path="EnergyPlant"]
+[editable path="EnergyPlant2"]
