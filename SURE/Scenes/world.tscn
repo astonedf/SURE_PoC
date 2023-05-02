@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c23oje7wdhlyi"]
+[gd_scene load_steps=16 format=3 uid="uid://c23oje7wdhlyi"]
 
 [ext_resource type="PackedScene" uid="uid://bppme8g1xtgg8" path="res://Scenes/tilemap.tscn" id="1_8jtqx"]
 [ext_resource type="Texture2D" uid="uid://bov80q4d8x5jl" path="res://Assets/Buildings/house_small_yellow_b.png" id="2_8wmjp"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://cvdjme5hto1ao" path="res://Assets/People/people_1_b.png" id="8_wpqsw"]
 [ext_resource type="Texture2D" uid="uid://dkoss0mydp0kj" path="res://Assets/People/people_4_b.png" id="9_a5p6h"]
 [ext_resource type="Texture2D" uid="uid://dfb8j0dgkthdj" path="res://Assets/Buildings/water_tower_b_damaged.png" id="9_swixi"]
-[ext_resource type="PackedScene" uid="uid://c16uhcush6cp1" path="res://Scenes/ui.tscn" id="10_3jten"]
 [ext_resource type="Texture2D" uid="uid://bhfxrylm2sf5h" path="res://Assets/People/people_5_d.png" id="10_qpcoi"]
 [ext_resource type="Texture2D" uid="uid://bskqc02rhk72n" path="res://Assets/People/people_6_c.png" id="11_col61"]
 [ext_resource type="PackedScene" uid="uid://cpg775rckpcto" path="res://Scenes/build_button.tscn" id="16_pnu0i"]
@@ -74,37 +73,36 @@ texture = ExtResource("10_qpcoi")
 position = Vector2(874, 205)
 texture = ExtResource("11_col61")
 
-[node name="EnergyPlant" parent="." instance=ExtResource("7_6x5m2")]
+[node name="Nuclear" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(439, 259)
 energy = 350
 cost = 75
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" parent="EnergyPlant" index="0"]
+[node name="Sprite2D" parent="Nuclear" index="0"]
 texture = ExtResource("8_7d7gc")
 
-[node name="Label" parent="EnergyPlant/ColorRect" index="0"]
+[node name="Label" parent="Nuclear/ColorRect" index="0"]
 text = "Nuclear"
 
-[node name="CollisionPolygon2D" parent="EnergyPlant/Area2D" index="0"]
+[node name="CollisionPolygon2D" parent="Nuclear/Area2D" index="0"]
 polygon = PackedVector2Array(-16, 65, -84, 31, -89, -28, -22, -64, 46, -31, 45, 28)
 
-[node name="EnergyPlant2" parent="." instance=ExtResource("7_6x5m2")]
+[node name="Coal" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(741, 212)
 energy = 100
 cost = 25
+poll = true
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" parent="EnergyPlant2" index="0"]
+[node name="Sprite2D" parent="Coal" index="0"]
 texture = ExtResource("9_swixi")
 
-[node name="Label" parent="EnergyPlant2/ColorRect" index="0"]
+[node name="Label" parent="Coal/ColorRect" index="0"]
 text = "Coal"
 
-[node name="CollisionPolygon2D" parent="EnergyPlant2/Area2D" index="0"]
+[node name="CollisionPolygon2D" parent="Coal/Area2D" index="0"]
 polygon = PackedVector2Array(-10, 67, -80, 37, -83, 11, -54, -4, -49, -61, -13, -69, 18, -57, 17, -11, 51, 11, 54, 35)
-
-[node name="UI" parent="." instance=ExtResource("10_3jten")]
 
 [node name="BuildButton" parent="." instance=ExtResource("16_pnu0i")]
 offset_left = 438.0
@@ -112,5 +110,5 @@ offset_top = 401.0
 offset_right = 486.0
 offset_bottom = 432.0
 
-[editable path="EnergyPlant"]
-[editable path="EnergyPlant2"]
+[editable path="Nuclear"]
+[editable path="Coal"]

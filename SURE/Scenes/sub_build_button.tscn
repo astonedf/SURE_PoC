@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0mknn0n70i83"]
+
+[ext_resource type="Script" path="res://SubBuildButton.gd" id="1_o1llq"]
+
+[node name="SubBuildButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_o1llq")

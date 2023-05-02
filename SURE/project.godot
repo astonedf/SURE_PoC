@@ -15,6 +15,11 @@ run/main_scene="res://Scenes/world.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Context="*res://Scenes/context.tscn"
+Ui="*res://Scenes/ui.tscn"
+
 [display]
 
 window/per_pixel_transparency/allowed=true

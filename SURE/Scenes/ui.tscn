@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://c16uhcush6cp1"]
+[gd_scene load_steps=6 format=3 uid="uid://c16uhcush6cp1"]
 
+[ext_resource type="Script" path="res://Scenes/ui.gd" id="1_ebpph"]
 [ext_resource type="Texture2D" uid="uid://jxfbng7wapfp" path="res://grey_sliderRight.png" id="1_v6q86"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bw2n7"]
@@ -25,6 +26,9 @@ corner_radius_bottom_left = 4
 
 [node name="UI" type="CanvasLayer"]
 follow_viewport_enabled = true
+script = ExtResource("1_ebpph")
+env = 50
+trust = 50
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(0, 40)
@@ -37,6 +41,7 @@ grow_vertical = 0
 color = Color(0.298039, 0.368627, 0.470588, 1)
 
 [node name="GreySliderRight" type="NinePatchRect" parent="ColorRect"]
+layout_mode = 0
 offset_left = 1009.0
 offset_top = 4.0
 offset_right = 1146.0
@@ -68,13 +73,15 @@ offset_bottom = 34.0
 size_flags_horizontal = 0
 text = "Energy :"
 
-[node name="ProgressBar" type="ProgressBar" parent="ColorRect/Label"]
+[node name="Energy" type="ProgressBar" parent="ColorRect/Label"]
 layout_mode = 0
 offset_left = 70.0
 offset_top = -2.0
 offset_right = 208.0
 offset_bottom = 25.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_bw2n7")
+max_value = 1000.0
+step = 1.0
 value = 50.0
 show_percentage = false
 
@@ -87,7 +94,7 @@ offset_bottom = 34.0
 size_flags_horizontal = 0
 text = "Environment : "
 
-[node name="ProgressBar" type="ProgressBar" parent="ColorRect/Label2"]
+[node name="Env" type="ProgressBar" parent="ColorRect/Label2"]
 layout_mode = 0
 offset_left = 120.0
 offset_top = -1.0
@@ -106,7 +113,7 @@ offset_bottom = 34.0
 size_flags_horizontal = 0
 text = "Trust :"
 
-[node name="ProgressBar" type="ProgressBar" parent="ColorRect/Label3"]
+[node name="Trust" type="ProgressBar" parent="ColorRect/Label3"]
 layout_mode = 0
 offset_left = 62.0
 offset_top = -3.0
@@ -130,15 +137,59 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -168.0
-offset_bottom = 40.0
+offset_left = -219.0
+offset_bottom = 97.0
 grow_horizontal = 0
 color = Color(0.1224, 0.2214, 0.36, 1)
 
-[node name="Label" type="Label" parent="ColorRect2/ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect2/ColorRect"]
 layout_mode = 0
-offset_right = 168.0
-offset_bottom = 38.0
-text = "Money:     $1'000"
-horizontal_alignment = 1
+offset_top = 4.0
+offset_right = 98.0
+offset_bottom = 90.0
+
+[node name="Label" type="Label" parent="ColorRect2/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "  Money:"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="ColorRect2/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "  Budget:"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect2/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "  Production: "
+vertical_alignment = 1
+
+[node name="money" type="Label" parent="ColorRect2/ColorRect"]
+layout_mode = 0
+offset_left = 101.0
+offset_right = 192.0
+offset_bottom = 44.0
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="prod" type="Label" parent="ColorRect2/ColorRect"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 57.0
+offset_right = 191.0
+offset_bottom = 97.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="budget" type="Label" parent="ColorRect2/ColorRect"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 29.0
+offset_right = 191.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+text = "000"
+horizontal_alignment = 2
 vertical_alignment = 1

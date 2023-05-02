@@ -14,6 +14,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Build"
 flat = true
 script = ExtResource("1_ly2d2")
+button_list = [["name", 100], ["name", 50]]
 
 [node name="Control" type="VBoxContainer" parent="."]
 visible = false
@@ -21,17 +22,5 @@ layout_mode = 0
 offset_left = -41.0
 offset_top = -101.0
 offset_right = 149.0
-
-[node name="Button" type="Button" parent="Control"]
-layout_mode = 2
-text = "Solar Panel $"
-
-[node name="Button2" type="Button" parent="Control"]
-layout_mode = 2
-text = "Wind Turbine $"
-
-[node name="Button3" type="Button" parent="Control"]
-layout_mode = 2
-text = "Hydroelectric $$ + Time"
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

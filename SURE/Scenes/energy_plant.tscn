@@ -14,7 +14,7 @@ texture = ExtResource("2_1cml2")
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -88.0
 offset_top = 41.0
-offset_right = 48.0
+offset_right = 56.0
 offset_bottom = 69.0
 color = Color(0.109804, 0.0705882, 0.25098, 0.74902)
 
@@ -30,7 +30,7 @@ vertical_alignment = 1
 [node name="ColorRect2" type="ColorRect" parent="."]
 offset_left = -88.0
 offset_top = 68.0
-offset_right = 48.0
+offset_right = 56.0
 offset_bottom = 98.0
 metadata/_edit_group_ = true
 
@@ -39,14 +39,27 @@ layout_mode = 0
 offset_right = 101.0
 offset_bottom = 31.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "⚡           💰"
+text = "⚡          💰         "
+vertical_alignment = 1
+
+[node name="Poll" type="Label" parent="ColorRect2"]
+visible = false
+layout_mode = 0
+offset_left = 112.0
+offset_right = 144.0
+offset_bottom = 31.0
+tooltip_text = "This plant produces CO2"
+mouse_filter = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "🏭"
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="ColorRect2"]
 layout_mode = 0
-offset_left = 25.0
+offset_left = 24.0
 offset_top = 3.0
-offset_right = 53.0
+offset_right = 52.0
 offset_bottom = 26.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 horizontal_alignment = 1
@@ -54,9 +67,9 @@ vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="ColorRect2"]
 layout_mode = 0
-offset_left = 90.0
+offset_left = 84.0
 offset_top = 4.0
-offset_right = 117.0
+offset_right = 111.0
 offset_bottom = 27.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 horizontal_alignment = 1
@@ -91,5 +104,6 @@ z_index = 2
 position = Vector2(-4, -5)
 polygon = PackedVector2Array(-7, 48, -84, 47, -83, 4, -82, -42, -7, -39, 61, -38, 74, 2, 61, 44)
 
+[connection signal="toggled" from="Switch" to="." method="_on_switch_toggled"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
