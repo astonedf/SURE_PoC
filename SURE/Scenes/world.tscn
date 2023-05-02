@@ -109,6 +109,7 @@ offset_left = 438.0
 offset_top = 401.0
 offset_right = 486.0
 offset_bottom = 432.0
+button_list = [["Wind Farm 100$", 100], ["Solar Farm 50$", 50]]
 
 [editable path="Nuclear"]
 [editable path="Coal"]

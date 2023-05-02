@@ -17,10 +17,10 @@ script = ExtResource("1_ly2d2")
 button_list = [["name", 100], ["name", 50]]
 
 [node name="Control" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 0
-offset_left = -41.0
-offset_top = -101.0
-offset_right = 149.0
+offset_left = -73.0
+offset_top = 43.0
+offset_right = 117.0
+offset_bottom = 144.0
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv6g4a4qig48s"]
+
+[ext_resource type="Texture2D" uid="uid://csvtdvdrgbyjn" path="res://Assets/spritesheet.png" id="1_ok7e6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5ips"]
+atlas = ExtResource("1_ok7e6")
+region = Rect2(135, 350, 133, 71)
+
+[node name="Farm" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = SubResource("AtlasTexture_w5ips")
