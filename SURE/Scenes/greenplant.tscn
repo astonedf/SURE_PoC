@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bssc83ceo4wjv"]
+
+[ext_resource type="Texture2D" uid="uid://dq1w5iyb13x1k" path="res://green_boxTick.png" id="1_8617g"]
+[ext_resource type="Texture2D" uid="uid://vakeu7mmf084" path="res://icon.svg" id="1_a2mf3"]
+
+[node name="greenplant" type="Sprite2D"]
+texture = ExtResource("1_8617g")
+
+[node name="Icon" type="Sprite2D" parent="."]
+visible = false
+z_index = 5
+position = Vector2(52, 57)
+texture = ExtResource("1_a2mf3")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_right = 20.0
+offset_bottom = 26.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 1
+text = "PV"

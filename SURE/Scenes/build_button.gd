@@ -1,15 +1,17 @@
 extends Button
 
 @export var button_list: Array = []
+@export var path: String = ""
+
 @onready var Global = get_node("/root/Ui")
-@onready var farm = preload("res://Scenes/farm.tscn")
+#@onready var farm = preload("res://Scenes/farm.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for item in button_list:
 		var button = Button.new()
 		button.text = item[0]
 		#button.pressed.connect(button, _on_button_pressed)
-		button.pressed.connect(_on_button_pressed.bind(item[1]))
+		button.pressed.connect(_on_button_pressed.bind(item))
 
 
 
@@ -25,11 +27,20 @@ func _process(delta):
 func _on_pressed():
 	$Control.visible = !$Control.visible
 
-func _on_button_pressed(price):
-	print(price)
-	Global.prod += price
+func _on_button_pressed(button):
+	print(button)
+	Global.prod += button[1]
 	Global.update_ui()
-	var instance = farm.instantiate()
+	var scene = load("res://Scenes/"+path+".tscn")
+	print(scene)
+	var instance = scene.instantiate()
 	instance.global_position = global_position
-	get_parent().add_child(instance)
-	queue_free()
+	print(global_position)
+	if path == "farm":
+		print(button[0])
+		instance.label_name = str(button[0])
+		instance.energy = button[2]
+		instance.cost = button[1]
+		get_parent().add_child(instance)
+		queue_free()
+	

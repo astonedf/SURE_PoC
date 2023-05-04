@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://btvu06t5i741p"]
+
+[ext_resource type="Texture2D" uid="uid://drcw0kxf6hoqa" path="res://Assets/bubble.png" id="1_j07qx"]
+
+[sub_resource type="Animation" id="Animation_s5qet"]
+resource_name = "float"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bubble:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(402, 377), Vector2(402, 380), Vector2(402, 377)]
+}
+
+[sub_resource type="Animation" id="Animation_kxyw0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bubble:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(402, 377)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uw7eu"]
+_data = {
+"RESET": SubResource("Animation_kxyw0"),
+"float": SubResource("Animation_s5qet")
+}
+
+[node name="Bubble" type="Sprite2D"]
+texture_filter = 1
+position = Vector2(402, 377)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_j07qx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
+autoplay = "float"
+libraries = {
+"": SubResource("AnimationLibrary_uw7eu")
+}

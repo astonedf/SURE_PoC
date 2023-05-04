@@ -67,9 +67,9 @@ vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="ColorRect2"]
 layout_mode = 0
-offset_left = 84.0
+offset_left = 80.0
 offset_top = 4.0
-offset_right = 111.0
+offset_right = 107.0
 offset_bottom = 27.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 horizontal_alignment = 1

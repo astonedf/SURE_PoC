@@ -6,6 +6,8 @@ extends CanvasLayer
 
 @export var money: int = 1000
 @export var prod: int = 0
+
+var full_farm: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$ColorRect/Label/Energy.value = energy
@@ -30,3 +32,6 @@ func update_ui():
 	$ColorRect2/ColorRect/money.text = str(money - prod)
 	$ColorRect2/ColorRect/budget.text = str(money)
 	$ColorRect2/ColorRect/prod.text = "-" + str(prod)
+	
+	if full_farm:
+		$Bubble.visible = true

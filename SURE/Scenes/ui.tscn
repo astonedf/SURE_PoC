@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c16uhcush6cp1"]
+[gd_scene load_steps=7 format=3 uid="uid://c16uhcush6cp1"]
 
 [ext_resource type="Script" path="res://Scenes/ui.gd" id="1_ebpph"]
 [ext_resource type="Texture2D" uid="uid://jxfbng7wapfp" path="res://grey_sliderRight.png" id="1_v6q86"]
+[ext_resource type="PackedScene" uid="uid://btvu06t5i741p" path="res://Scenes/bubble.tscn" id="3_nonk7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bw2n7"]
 bg_color = Color(0.788235, 0.65098, 0.0313726, 1)
@@ -193,3 +194,6 @@ theme_override_colors/font_color = Color(0, 1, 0, 1)
 text = "000"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="Bubble" parent="." instance=ExtResource("3_nonk7")]
+visible = false
