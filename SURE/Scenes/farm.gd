@@ -1,10 +1,11 @@
 extends Node2D
 
 @export var energy : int
-@export var cost : int
+@export var build : int
 var prod: int
 var energy_init: int
-var cost_init: int
+var build_init: int
+var prod_init:int
 @export var label_name: String
 var num: int = 1
 var plus: bool = true
@@ -13,13 +14,13 @@ var plus: bool = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$ColorRect2/Label2.text = str(energy)
-	$ColorRect2/Label3.text = str(cost)
+	$ColorRect2/Label3.text = str(build)
 	$ColorRect/Label.text = label_name
 	Global.energy += energy
-	Global.prod += cost
+	Global.build += build
 	
 	energy_init = energy
-	cost_init = cost
+	build_init = build
 	
 	
 	$Button.visible = plus
@@ -38,7 +39,7 @@ func _on_button_pressed():
 	if num < 5:
 		energy += energy_init
 		print(energy)
-		cost += cost_init
+		build += build_init
 		num += 1
 		$ColorRect2/Num.text = str(num)
 		if num == 4:
@@ -50,8 +51,9 @@ func _on_button_pressed():
 		
 func _update():
 	$ColorRect2/Label2.text = str(energy)
-	$ColorRect2/Label3.text = str(cost)
-	Global.energy += energy
-	Global.prod += cost
+	$ColorRect2/Label3.text = str(prod)
+	Global.energy += energy_init
+	Global.prod += prod_init
+	Global.build += build_init
 	
 	Global.update_ui()

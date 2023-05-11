@@ -19,10 +19,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Energy.value = Global.energy
 	
+	$Energy.value = Global.energy
+	energy_value = $Energy.value
 
 func _on_energy_value_changed(value):
+	$Energy.value = Global.energy
 	if value < energy_min:
 		$Energy.set("theme_override_styles/fill", energyStyleLow)
 	else:

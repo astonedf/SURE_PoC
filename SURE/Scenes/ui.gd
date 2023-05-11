@@ -6,7 +6,7 @@ extends CanvasLayer
 
 @export var money: int = 1000
 @export var prod: int = 0
-
+var build: int = 0
 
 
 var full_farm: bool = false
@@ -19,6 +19,7 @@ func _ready():
 	$ColorRect2/ColorRect/money.text = str(money - prod)
 	$ColorRect2/ColorRect/budget.text = str(money)
 	$ColorRect2/ColorRect/prod.text = str(prod)
+	$ColorRect2/ColorRect/Build.text = str(prod)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,9 +33,10 @@ func update_ui():
 	$ColorRect/Label2/Env.value = env
 	$ColorRect/Label3/Trust.value = trust
 	
-	$ColorRect2/ColorRect/money.text = str(money - prod)
+	$ColorRect2/ColorRect/money.text = str(money - prod - build)
 	$ColorRect2/ColorRect/budget.text = str(money)
 	$ColorRect2/ColorRect/prod.text = "-" + str(prod)
+	$ColorRect2/ColorRect/Build.text = "-" + str(build)
 	
 	if full_farm:
 		$Bubble.visible = true

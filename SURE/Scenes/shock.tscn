@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/shock.gd" id="1_bkl8y"]
 [ext_resource type="Texture2D" uid="uid://dtc7lnxlbfgjf" path="res://willian-justen-de-vasconcellos-cIQ0wHskpMo-unsplash.jpg" id="1_s7q3d"]
-[ext_resource type="PackedScene" uid="uid://b8iq0h0nmv40r" path="res://Scenes/energy_bar.tscn" id="2_i1jhu"]
+[ext_resource type="PackedScene" uid="uid://dgu02uh047h3m" path="res://Scenes/energy_bar.tscn" id="2_i1jhu"]
 
 [sub_resource type="Theme" id="Theme_jkqh0"]
 
@@ -26,7 +26,7 @@ anchor_bottom = 0.5
 offset_left = -270.0
 offset_top = -180.0
 offset_right = 271.0
-offset_bottom = 97.0
+offset_bottom = 148.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_jkqh0")
@@ -45,6 +45,44 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Cold Spell"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Result" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -266.0
+offset_top = -115.0
+offset_bottom = -37.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "..."
+autowrap_mode = 3
+
+[node name="Continue" type="Button" parent="ColorRect/Result"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.5
+offset_top = -15.0
+offset_right = 30.5
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Continue"
+
+[node name="EnergyBar" parent="ColorRect/Result" instance=ExtResource("2_i1jhu")]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -56.0
+offset_right = 63.0
+offset_bottom = -30.0
 
 [node name="Text" type="Label" parent="ColorRect"]
 layout_mode = 1
@@ -117,9 +155,5 @@ theme_override_font_sizes/font_size = 10
 text = "Import electricity from neighbouring countries.
 - 50 💰"
 
-[node name="EnergyBar" parent="ColorRect/Text" instance=ExtResource("2_i1jhu")]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 157.0
-offset_right = 65.0
-offset_bottom = 183.0
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="ColorRect/Result/Continue" to="." method="_on_continue_pressed"]

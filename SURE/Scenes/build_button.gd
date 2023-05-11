@@ -35,7 +35,8 @@ func _on_pressed():
 func _on_button_pressed(button):
 	
 	print(button)
-	Global.prod += button[1]
+	#Global.build += button[1]
+	#Global.energy = button[2]
 	Global.update_ui()
 	var scene = load("res://Scenes/"+path+".tscn")
 	print(scene)
@@ -46,7 +47,8 @@ func _on_button_pressed(button):
 		print(button[0])
 		instance.label_name = str(button[0])
 		instance.energy = button[2]
-		instance.cost = button[3]
+		instance.prod = button[3]
+		instance.build = button[1]
 		instance.plus = plus
 		get_parent().add_child(instance)
 		queue_free()
@@ -59,4 +61,11 @@ func _on_button_pressed(button):
 		get_parent().add_child(instance)
 		queue_free()
 	
-	
+	if path == "energy_plant":
+		instance.label_name = str(button[0])
+		instance.energy = button[2]
+		instance.prod = button[3]
+		instance.build = button[1]
+		instance.poll = plus
+		get_parent().add_child(instance)
+		queue_free()

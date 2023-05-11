@@ -63,11 +63,11 @@ position = Vector2(370, 406)
 texture = ExtResource("8_wpqsw")
 
 [node name="People4B" type="Sprite2D" parent="Props"]
-position = Vector2(826, 298)
+position = Vector2(817, 316)
 texture = ExtResource("9_a5p6h")
 
 [node name="People5D" type="Sprite2D" parent="Props"]
-position = Vector2(845, 305)
+position = Vector2(841, 333)
 texture = ExtResource("10_qpcoi")
 
 [node name="People6B" type="Sprite2D" parent="Props"]
@@ -76,8 +76,9 @@ texture = ExtResource("11_col61")
 
 [node name="Nuclear" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(439, 259)
+label_name = "Nuclear"
 energy = 250
-cost = 75
+prod = 100
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" parent="Nuclear" index="0"]
@@ -91,8 +92,9 @@ polygon = PackedVector2Array(-16, 65, -84, 31, -89, -28, -22, -64, 46, -31, 45, 
 
 [node name="Coal" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(741, 212)
+label_name = "Coal"
 energy = 100
-cost = 50
+prod = 50
 poll = true
 metadata/_edit_group_ = true
 
@@ -135,6 +137,14 @@ theme_override_colors/font_pressed_color = Color(0.372549, 0.372549, 0.372549, 1
 button_list = [["200W Hydro 10 years", 200, 200], ["350W Hydro 15 years", 300, 350]]
 path = "build_process"
 plus = false
+
+[node name="BuildGas" parent="." instance=ExtResource("16_pnu0i")]
+offset_left = 438.0
+offset_top = 149.0
+offset_right = 486.0
+offset_bottom = 180.0
+button_list = [["Gas Plant 100$", 100, 100, 100]]
+path = "energy_plant"
 
 [editable path="Nuclear"]
 [editable path="Coal"]

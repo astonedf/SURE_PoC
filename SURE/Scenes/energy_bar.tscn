@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8iq0h0nmv40r"]
+[gd_scene load_steps=3 format=3 uid="uid://dgu02uh047h3m"]
 
 [ext_resource type="Script" path="res://Scenes/energy_bar.gd" id="1_8teth"]
 [ext_resource type="StyleBox" uid="uid://phji31i5dkkd" path="res://Scenes/energy_bar.tres" id="2_4gg5u"]

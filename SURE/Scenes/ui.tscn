@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/ui.gd" id="1_ebpph"]
 [ext_resource type="Texture2D" uid="uid://jxfbng7wapfp" path="res://grey_sliderRight.png" id="1_v6q86"]
-[ext_resource type="PackedScene" uid="uid://b8iq0h0nmv40r" path="res://Scenes/energy_bar.tscn" id="3_fm1y6"]
+[ext_resource type="PackedScene" uid="uid://dgu02uh047h3m" path="res://Scenes/energy_bar.tscn" id="3_fm1y6"]
 [ext_resource type="PackedScene" uid="uid://btvu06t5i741p" path="res://Scenes/bubble.tscn" id="3_nonk7"]
 [ext_resource type="PackedScene" uid="uid://bi5vix6ylto5a" path="res://Scenes/shock.tscn" id="5_tj765"]
 
@@ -50,7 +50,7 @@ patch_margin_right = 15
 patch_margin_bottom = 6
 metadata/_edit_group_ = true
 
-[node name="Label" type="Button" parent="ColorRect/GreySliderRight"]
+[node name="NextTurn" type="Button" parent="ColorRect/GreySliderRight"]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 2.0
@@ -121,7 +121,7 @@ custom_minimum_size = Vector2(0, 40)
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.062
-offset_bottom = -40.176
+offset_bottom = 37.52
 grow_horizontal = 2
 color = Color(0.298039, 0.368627, 0.470588, 1)
 
@@ -131,7 +131,7 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -219.0
-offset_bottom = 97.0
+offset_bottom = 126.0
 grow_horizontal = 0
 color = Color(0.1224, 0.2214, 0.36, 1)
 
@@ -156,6 +156,11 @@ layout_mode = 2
 text = "  Production: "
 vertical_alignment = 1
 
+[node name="Label4" type="Label" parent="ColorRect2/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "  Building: "
+vertical_alignment = 1
+
 [node name="money" type="Label" parent="ColorRect2/ColorRect"]
 layout_mode = 0
 offset_left = 101.0
@@ -171,6 +176,17 @@ offset_left = 51.0
 offset_top = 57.0
 offset_right = 191.0
 offset_bottom = 97.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Build" type="Label" parent="ColorRect2/ColorRect"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 88.0
+offset_right = 191.0
+offset_bottom = 128.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "000"
 horizontal_alignment = 2
@@ -220,4 +236,4 @@ visible = false
 [node name="Shock" parent="." instance=ExtResource("5_tj765")]
 visible = false
 
-[connection signal="pressed" from="ColorRect/GreySliderRight/Label" to="." method="_on_label_pressed"]
+[connection signal="pressed" from="ColorRect/GreySliderRight/NextTurn" to="." method="_on_label_pressed"]
