@@ -7,13 +7,12 @@ extends CanvasLayer
 @export var money: int = 1000
 @export var prod: int = 0
 
-var energyStyleLow = preload("res://Scenes/energy_bar.tres")
-var energyStyle = preload("res://Scenes/energybar_norm.tres")
+
 
 var full_farm: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$ColorRect/Label/Energy.value = energy
+	$ColorRect/EnergyBar.energy_value = energy
 	$ColorRect/Label2/Env.value = env
 	$ColorRect/Label3/Trust.value = trust
 	
@@ -28,11 +27,8 @@ func _process(delta):
 	
 	
 func update_ui():
-	$ColorRect/Label/Energy.value = energy
-	if energy < 500:
-		$ColorRect/Label/Energy.set("theme_override_styles/fill", energyStyleLow)
-	else:
-		$ColorRect/Label/Energy.set("theme_override_styles/fill", energyStyle)
+	$ColorRect/EnergyBar.energy_value = energy
+	
 	$ColorRect/Label2/Env.value = env
 	$ColorRect/Label3/Trust.value = trust
 	
@@ -42,3 +38,7 @@ func update_ui():
 	
 	if full_farm:
 		$Bubble.visible = true
+
+
+func _on_label_pressed():
+	$Shock.visible = true
