@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c23oje7wdhlyi"]
+[gd_scene load_steps=17 format=3 uid="uid://c23oje7wdhlyi"]
 
 [ext_resource type="PackedScene" uid="uid://bppme8g1xtgg8" path="res://Scenes/tilemap.tscn" id="1_8jtqx"]
 [ext_resource type="Texture2D" uid="uid://bov80q4d8x5jl" path="res://Assets/Buildings/house_small_yellow_b.png" id="2_8wmjp"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dfb8j0dgkthdj" path="res://Assets/Buildings/water_tower_b_damaged.png" id="9_swixi"]
 [ext_resource type="Texture2D" uid="uid://bhfxrylm2sf5h" path="res://Assets/People/people_5_d.png" id="10_qpcoi"]
 [ext_resource type="Texture2D" uid="uid://bskqc02rhk72n" path="res://Assets/People/people_6_c.png" id="11_col61"]
+[ext_resource type="PackedScene" uid="uid://bi5vix6ylto5a" path="res://Scenes/shock.tscn" id="16_gs86y"]
 [ext_resource type="PackedScene" uid="uid://cpg775rckpcto" path="res://Scenes/build_button.tscn" id="16_pnu0i"]
 
 [node name="World" type="Node2D"]
@@ -76,7 +77,7 @@ texture = ExtResource("11_col61")
 
 [node name="Nuclear" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(439, 259)
-energy = 350
+energy = 250
 cost = 75
 metadata/_edit_group_ = true
 
@@ -92,7 +93,7 @@ polygon = PackedVector2Array(-16, 65, -84, 31, -89, -28, -22, -64, 46, -31, 45, 
 [node name="Coal" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(741, 212)
 energy = 100
-cost = 25
+cost = 50
 poll = true
 metadata/_edit_group_ = true
 
@@ -105,25 +106,38 @@ text = "Coal"
 [node name="CollisionPolygon2D" parent="Coal/Area2D" index="0"]
 polygon = PackedVector2Array(-10, 67, -80, 37, -83, 11, -54, -4, -49, -61, -13, -69, 18, -57, 17, -11, 51, 11, 54, 35)
 
-[node name="BuildButton" parent="." instance=ExtResource("16_pnu0i")]
+[node name="BuildSolar" parent="." instance=ExtResource("16_pnu0i")]
 offset_left = 414.0
 offset_top = 393.0
 offset_right = 506.0
 offset_bottom = 443.0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_pressed_color = Color(0.372549, 0.372549, 0.372549, 1)
-button_list = [["10W Solar Farm 75$", 75, 10], ["15W Solar Farm 100$", 100, 15]]
+button_list = [["10W Solar Farm 75$", 75, 10, 0], ["15W Solar Farm 100$", 100, 15, 0]]
 path = "farm"
 
-[node name="BuildButton2" parent="." instance=ExtResource("16_pnu0i")]
-offset_left = 662.0
+[node name="BuildWind" parent="." instance=ExtResource("16_pnu0i")]
+offset_left = 859.0
+offset_top = 266.0
+offset_right = 951.0
+offset_bottom = 316.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_pressed_color = Color(0.372549, 0.372549, 0.372549, 1)
+button_list = [["Wind Farm 100$", 100, 10, 0]]
+path = "farm"
+
+[node name="BuildHydro" parent="." instance=ExtResource("16_pnu0i")]
+offset_left = 660.0
 offset_top = 368.0
-offset_right = 754.0
+offset_right = 752.0
 offset_bottom = 418.0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_pressed_color = Color(0.372549, 0.372549, 0.372549, 1)
 button_list = [["200W Hydro 10 years", 200, 200], ["350W Hydro 15 years", 300, 350]]
-path = "farm"
+path = "build_process"
+plus = false
+
+[node name="Shock" parent="." instance=ExtResource("16_gs86y")]
 
 [editable path="Nuclear"]
 [editable path="Coal"]

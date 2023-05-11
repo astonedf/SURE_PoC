@@ -17,7 +17,7 @@ theme_override_colors/font_hover_color = Color(0.203922, 0.203922, 0.203922, 1)
 text = "Build"
 flat = true
 script = ExtResource("1_ly2d2")
-button_list = [["name", 100], ["name", 50]]
+button_list = [["name", 100, null], ["name", 50, null]]
 
 [node name="Control" type="VBoxContainer" parent="."]
 visible = false
