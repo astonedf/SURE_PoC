@@ -48,32 +48,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "⚡        💰         "
 vertical_alignment = 1
 
-[node name="Total" type="Label" parent="ColorRect2"]
-visible = false
-layout_mode = 0
-offset_left = 112.0
-offset_right = 144.0
-offset_bottom = 31.0
-tooltip_text = "This plant produces CO2"
-mouse_filter = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "/5"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Num" type="Label" parent="ColorRect2"]
-visible = false
-layout_mode = 0
-offset_left = 98.6667
-offset_right = 130.667
-offset_bottom = 31.0
-tooltip_text = "This plant produces CO2"
-mouse_filter = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "1"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Label2" type="Label" parent="ColorRect2"]
 layout_mode = 0
 offset_left = 18.6667

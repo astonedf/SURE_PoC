@@ -9,13 +9,12 @@
 [node name="Shock" type="CanvasLayer"]
 script = ExtResource("1_bkl8y")
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="ColorRect2" type="Panel" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.2, 0.192157, 0.184314, 0.486275)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
@@ -83,6 +82,9 @@ offset_left = 1.0
 offset_top = -56.0
 offset_right = 63.0
 offset_bottom = -30.0
+
+[node name="Line2D" parent="ColorRect/Result/EnergyBar/Energy" index="0"]
+position = Vector2(-257, -614)
 
 [node name="Text" type="Label" parent="ColorRect"]
 layout_mode = 1
@@ -157,3 +159,5 @@ text = "Import electricity from neighbouring countries.
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="ColorRect/Result/Continue" to="." method="_on_continue_pressed"]
+
+[editable path="ColorRect/Result/EnergyBar"]

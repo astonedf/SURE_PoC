@@ -4,7 +4,8 @@ extends CanvasLayer
 @export var env: int = 0
 @export var trust: int = 0
 
-@export var money: int = 1000
+@export var budget: int = 1000
+var money: int
 @export var prod: int = 0
 var build: int = 0
 
@@ -16,8 +17,10 @@ func _ready():
 	$ColorRect/Label2/Env.value = env
 	$ColorRect/Label3/Trust.value = trust
 	
-	$ColorRect2/ColorRect/money.text = str(money - prod)
-	$ColorRect2/ColorRect/budget.text = str(money)
+	money = budget - prod
+	
+	$ColorRect2/ColorRect2/money.text = str(money)
+	$ColorRect2/ColorRect/budget.text = str(budget)
 	$ColorRect2/ColorRect/prod.text = str(prod)
 	$ColorRect2/ColorRect/Build.text = str(prod)
 
@@ -33,8 +36,10 @@ func update_ui():
 	$ColorRect/Label2/Env.value = env
 	$ColorRect/Label3/Trust.value = trust
 	
-	$ColorRect2/ColorRect/money.text = str(money - prod - build)
-	$ColorRect2/ColorRect/budget.text = str(money)
+	money = budget - prod - build
+	
+	$ColorRect2/ColorRect2/money.text = str(money)
+	$ColorRect2/ColorRect/budget.text = str(budget)
 	$ColorRect2/ColorRect/prod.text = "-" + str(prod)
 	$ColorRect2/ColorRect/Build.text = "-" + str(build)
 	
@@ -44,3 +49,11 @@ func update_ui():
 
 func _on_label_pressed():
 	$Shock.visible = true
+
+
+func _on_energy_bar_reached():
+	$ColorRect/Next.visible = true
+
+
+func _on_money_ui_pressed():
+	$ColorRect2/ColorRect.visible = !$ColorRect2/ColorRect.visible

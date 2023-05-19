@@ -48,3 +48,15 @@ func _on_switch_toggled(button_pressed):
 		if poll:
 			Global.env += poll_value
 		Global.update_ui()
+
+
+func _on_button_pressed():
+	$Info.visible = !$Info.visible
+
+
+func _on_button_mouse_entered():
+	$Sprite2D.set_modulate(Color("#cdcdcd"))
+
+
+func _on_button_mouse_exited():
+	$Sprite2D.set_modulate(Color(1,1,1,1))

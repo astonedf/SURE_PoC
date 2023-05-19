@@ -1,0 +1,110 @@
+[gd_scene load_steps=2 format=3 uid="uid://jj476u8yn2g8"]
+
+[ext_resource type="Texture2D" uid="uid://vakeu7mmf084" path="res://icon.svg" id="1_t74m5"]
+
+[node name="Window" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 64.0
+offset_right = 1008.0
+offset_bottom = 576.0
+color = Color(0.843137, 0.921569, 0.968627, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/ColorRect"]
+layout_mode = 2
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 288.0
+offset_bottom = 496.0
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="MarginContainer/Panel/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Policy 1"
+
+[node name="Button2" type="Button" parent="MarginContainer/Panel/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Policy 2"
+
+[node name="Button3" type="Button" parent="MarginContainer/Panel/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Policy 3"
+
+[node name="Button4" type="Button" parent="MarginContainer/Panel/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Policy 4"
+
+[node name="Button5" type="Button" parent="MarginContainer/Panel/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "Policy n"
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/ColorRect"]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 80.0
+offset_right = 792.0
+offset_bottom = 472.0
+color = Color(0.902066, 0.952443, 0.98218, 1)
+
+[node name="Title" type="Label" parent="MarginContainer/Panel/ColorRect"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 24.0
+offset_right = 568.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0.270588, 0.270588, 0.270588, 1)
+theme_override_font_sizes/font_size = 31
+text = "Policy"
+vertical_alignment = 1
+
+[node name="Text" type="Label" parent="MarginContainer/Panel/ColorRect"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 104.0
+offset_right = 768.0
+offset_bottom = 360.0
+theme_override_colors/font_color = Color(0.270588, 0.270588, 0.270588, 1)
+theme_override_font_sizes/font_size = 15
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+horizontal_alignment = 3
+autowrap_mode = 3
+
+[node name="Effect" type="Label" parent="MarginContainer/Panel/ColorRect"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 344.0
+offset_right = 768.0
+offset_bottom = 456.0
+theme_override_colors/font_color = Color(0.270588, 0.270588, 0.270588, 1)
+theme_override_font_sizes/font_size = 15
+text = "+ n ⚡    
+- n 💰      
+n turns 🕒"
+horizontal_alignment = 1
+vertical_alignment = 3
+autowrap_mode = 3
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 88.0
+offset_top = 160.0
+offset_right = 216.0
+offset_bottom = 288.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_t74m5")

@@ -1,12 +1,45 @@
-[gd_scene load_steps=4 format=3 uid="uid://ct4blqwh4y6ab"]
+[gd_scene load_steps=5 format=3 uid="uid://ct4blqwh4y6ab"]
 
 [ext_resource type="Script" path="res://src/energy_plant.gd" id="1_kwxyt"]
 [ext_resource type="Texture2D" uid="uid://dss7fnknoqxtk" path="res://Assets/Buildings/barn_red_a.png" id="2_1cml2"]
+[ext_resource type="Texture2D" uid="uid://bg7vb5rl1redb" path="res://line-graph-example_27c5571306.jpg" id="3_j4eg8"]
 
 [sub_resource type="Theme" id="Theme_f6ssq"]
 
 [node name="EnergyPlant" type="Node2D"]
 script = ExtResource("1_kwxyt")
+
+[node name="Info" type="ColorRect" parent="."]
+visible = false
+z_index = 3
+offset_left = 80.0
+offset_top = -136.0
+offset_right = 264.0
+offset_bottom = 96.0
+color = Color(0.803922, 0.803922, 0.803922, 0.85098)
+
+[node name="Line-graph-example27c5571306" type="Sprite2D" parent="Info"]
+position = Vector2(92.8843, 57.75)
+scale = Vector2(0.13724, 0.13724)
+texture = ExtResource("3_j4eg8")
+
+[node name="Label" type="Label" parent="Info"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 152.0
+offset_right = 176.0
+offset_bottom = 175.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 11
+text = "Taxed                          Subsidised"
+
+[node name="HSlider" type="HSlider" parent="Info"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 120.0
+offset_right = 152.0
+offset_bottom = 160.0
+scrollable = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_1cml2")
@@ -96,6 +129,14 @@ flat = true
 alignment = 1
 icon_alignment = 1
 
+[node name="Button" type="Button" parent="."]
+offset_left = -72.0
+offset_top = -56.0
+offset_right = 48.0
+offset_bottom = 40.0
+focus_mode = 0
+flat = true
+
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
 z_index = 2
@@ -105,5 +146,8 @@ position = Vector2(-4, -5)
 polygon = PackedVector2Array(-7, 48, -84, 47, -83, 4, -82, -42, -7, -39, 61, -38, 74, 2, 61, 44)
 
 [connection signal="toggled" from="Switch" to="." method="_on_switch_toggled"]
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

@@ -136,7 +136,6 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_pressed_color = Color(0.372549, 0.372549, 0.372549, 1)
 button_list = [["200W Hydro 10 years", 200, 200], ["350W Hydro 15 years", 300, 350]]
 path = "build_process"
-plus = false
 
 [node name="BuildGas" parent="." instance=ExtResource("16_pnu0i")]
 offset_left = 438.0

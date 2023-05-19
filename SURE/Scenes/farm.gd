@@ -23,9 +23,7 @@ func _ready():
 	build_init = build
 	
 	
-	$Button.visible = plus
-	$ColorRect2/Total.visible = plus
-	$ColorRect2/Num.visible = plus
+	
 	
 	Global.update_ui()
 
@@ -36,7 +34,8 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	if num < 5:
+	if num < 5 && Global.money >= build_init:
+		print(Global.money, build_init)
 		energy += energy_init
 		print(energy)
 		build += build_init
