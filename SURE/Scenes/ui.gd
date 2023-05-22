@@ -9,6 +9,7 @@ var money: int
 @export var prod: int = 0
 var build: int = 0
 
+signal updated
 
 var full_farm: bool = false
 # Called when the node enters the scene tree for the first time.
@@ -45,6 +46,8 @@ func update_ui():
 	
 	if full_farm:
 		$Bubble.visible = true
+		
+	emit_signal("updated")
 
 
 func _on_label_pressed():

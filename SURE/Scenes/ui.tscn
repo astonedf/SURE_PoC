@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://c16uhcush6cp1"]
+[gd_scene load_steps=9 format=3 uid="uid://c16uhcush6cp1"]
 
 [ext_resource type="Script" path="res://Scenes/ui.gd" id="1_ebpph"]
 [ext_resource type="Texture2D" uid="uid://jxfbng7wapfp" path="res://grey_sliderRight.png" id="1_v6q86"]
 [ext_resource type="PackedScene" uid="uid://dgu02uh047h3m" path="res://Scenes/energy_bar.tscn" id="3_fm1y6"]
 [ext_resource type="PackedScene" uid="uid://btvu06t5i741p" path="res://Scenes/bubble.tscn" id="3_nonk7"]
+[ext_resource type="PackedScene" uid="uid://bbawtnbermnvh" path="res://Scenes/BarInfo.tscn" id="4_67rbh"]
 [ext_resource type="PackedScene" uid="uid://bi5vix6ylto5a" path="res://Scenes/shock.tscn" id="5_tj765"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldrdn"]
@@ -67,6 +68,27 @@ offset_left = 184.0
 offset_top = 9.0
 offset_right = 246.0
 offset_bottom = 35.0
+
+[node name="Info" type="Button" parent="ColorRect/EnergyBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -8.0
+offset_right = 147.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="Control" parent="ColorRect/EnergyBar" instance=ExtResource("4_67rbh")]
+layout_mode = 1
+offset_left = 19.0
+offset_top = -198.0
+offset_right = 184.708
+offset_bottom = -17.19
 
 [node name="Label2" type="Label" parent="ColorRect"]
 layout_mode = 2
@@ -133,7 +155,7 @@ anchor_right = 1.0
 offset_left = -232.0
 offset_bottom = 142.0
 grow_horizontal = 0
-color = Color(0.1224, 0.2214, 0.36, 1)
+color = Color(0.121569, 0.219608, 0.360784, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect2/ColorRect"]
 layout_mode = 0
