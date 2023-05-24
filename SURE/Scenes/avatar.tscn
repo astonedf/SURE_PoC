@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=3 uid="uid://dsu6t86pxh6ch"]
+
+[ext_resource type="Script" path="res://src/avatar.gd" id="1_au3xk"]
+[ext_resource type="Texture2D" uid="uid://bcfq07hru45wv" path="res://Assets/People/people_1_a.png" id="1_vco17"]
+[ext_resource type="Texture2D" uid="uid://drcw0kxf6hoqa" path="res://Assets/bubble.png" id="2_tk30j"]
+[ext_resource type="Texture2D" uid="uid://c77oa3o1151jn" path="res://taxcuts.PNG" id="4_es0ss"]
+[ext_resource type="Texture2D" uid="uid://cusbv626fci2u" path="res://union.PNG" id="5_qkthh"]
+
+[sub_resource type="Animation" id="Animation_dcgcn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bubble:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(35, -22)]
+}
+
+[sub_resource type="Animation" id="Animation_ab6wh"]
+resource_name = "float"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bubble:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(35, -22), Vector2(35, -28), Vector2(35, -23)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t4ksw"]
+_data = {
+"RESET": SubResource("Animation_dcgcn"),
+"float": SubResource("Animation_ab6wh")
+}
+
+[node name="Avatar" type="Node2D"]
+script = ExtResource("1_au3xk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_vco17")
+
+[node name="Bubble" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(35, -22)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_tk30j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "float"
+libraries = {
+"": SubResource("AnimationLibrary_t4ksw")
+}
+
+[node name="Info" type="ColorRect" parent="."]
+visible = false
+offset_left = -40.0
+offset_top = -65.0
+offset_right = 40.0
+offset_bottom = -25.0
+
+[node name="GreenBoxTick" type="Sprite2D" parent="Info"]
+position = Vector2(20, 20)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_es0ss")
+
+[node name="GreenBoxTick2" type="Sprite2D" parent="Info"]
+position = Vector2(59, 21)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_qkthh")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -8.0
+offset_top = -16.0
+offset_right = 8.0
+offset_bottom = 16.0
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

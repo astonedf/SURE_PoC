@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpg775rckpcto"]
+[gd_scene load_steps=2 format=3 uid="uid://banvqdghwoj3p"]
 
-[ext_resource type="Script" path="res://Scenes/build_button.gd" id="1_ly2d2"]
+[ext_resource type="Script" path="res://src/build_button.gd" id="1_8bw42"]
 
 [node name="BuildButton" type="Button"]
 anchors_preset = 15
@@ -16,7 +16,7 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.203922, 0.203922, 0.203922, 1)
 text = "Build"
 flat = true
-script = ExtResource("1_ly2d2")
+script = ExtResource("1_8bw42")
 button_list = [["name", 100, null], ["name", 50, null]]
 
 [node name="Control" type="VBoxContainer" parent="."]

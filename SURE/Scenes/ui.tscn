@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c16uhcush6cp1"]
+[gd_scene load_steps=9 format=3 uid="uid://bs48lirfn2fp2"]
 
-[ext_resource type="Script" path="res://Scenes/ui.gd" id="1_ebpph"]
+[ext_resource type="Script" path="res://src/ui.gd" id="1_blqjq"]
 [ext_resource type="Texture2D" uid="uid://jxfbng7wapfp" path="res://grey_sliderRight.png" id="1_v6q86"]
-[ext_resource type="PackedScene" uid="uid://dgu02uh047h3m" path="res://Scenes/energy_bar.tscn" id="3_fm1y6"]
+[ext_resource type="PackedScene" path="res://Scenes/energy_bar.tscn" id="3_fm1y6"]
 [ext_resource type="PackedScene" uid="uid://btvu06t5i741p" path="res://Scenes/bubble.tscn" id="3_nonk7"]
-[ext_resource type="PackedScene" uid="uid://bbawtnbermnvh" path="res://Scenes/BarInfo.tscn" id="4_67rbh"]
-[ext_resource type="PackedScene" uid="uid://bi5vix6ylto5a" path="res://Scenes/shock.tscn" id="5_tj765"]
+[ext_resource type="PackedScene" uid="uid://u1nvhv5ceok" path="res://Scenes/BarInfo.tscn" id="4_67rbh"]
+[ext_resource type="PackedScene" path="res://Scenes/shock.tscn" id="5_tj765"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldrdn"]
 bg_color = Color(0.152941, 0.658824, 0.152941, 1)
@@ -23,7 +23,7 @@ corner_radius_bottom_left = 4
 
 [node name="UI" type="CanvasLayer"]
 follow_viewport_enabled = true
-script = ExtResource("1_ebpph")
+script = ExtResource("1_blqjq")
 env = 50
 trust = 60
 
@@ -69,26 +69,15 @@ offset_top = 9.0
 offset_right = 246.0
 offset_bottom = 35.0
 
-[node name="Info" type="Button" parent="ColorRect/EnergyBar"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -7.0
-offset_top = -8.0
-offset_right = 147.0
-offset_bottom = 3.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_default_cursor_shape = 2
-flat = true
-
-[node name="Control" parent="ColorRect/EnergyBar" instance=ExtResource("4_67rbh")]
+[node name="Info" parent="ColorRect/EnergyBar" instance=ExtResource("4_67rbh")]
 layout_mode = 1
 offset_left = 19.0
 offset_top = -198.0
 offset_right = 184.708
 offset_bottom = -17.19
+label1 = "Renewable"
+label2 = "Fossil"
+label3 = "Nuclear"
 
 [node name="Label2" type="Label" parent="ColorRect"]
 layout_mode = 2
@@ -115,6 +104,18 @@ position = Vector2(-210, -615)
 points = PackedVector2Array(332, 646, 332, 614)
 width = 1.0
 
+[node name="BarInfo" parent="ColorRect/Label2" instance=ExtResource("4_67rbh")]
+layout_mode = 1
+offset_left = 76.0
+offset_top = -195.0
+offset_right = 238.242
+offset_bottom = -16.19
+grow_horizontal = 1
+grow_vertical = 1
+label1 = "Land use"
+label2 = "Pollution"
+label3 = "What else?"
+
 [node name="Label3" type="Label" parent="ColorRect"]
 layout_mode = 2
 offset_left = 736.0
@@ -138,16 +139,28 @@ position = Vector2(-263, -615)
 points = PackedVector2Array(332, 646, 332, 614)
 width = 1.0
 
+[node name="BarInfo" parent="ColorRect/Label3" instance=ExtResource("4_67rbh")]
+layout_mode = 1
+offset_left = 35.0
+offset_top = -193.0
+offset_right = 205.562
+offset_bottom = -16.19
+grow_horizontal = 1
+grow_vertical = 1
+label1 = "Energy prices"
+label2 = "Environment"
+
 [node name="ColorRect2" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(0, 40)
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.062
-offset_bottom = 10.824
+offset_bottom = 7.824
 grow_horizontal = 2
 color = Color(0.298039, 0.368627, 0.470588, 1)
 
 [node name="ColorRect" type="ColorRect" parent="ColorRect2"]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -218,7 +231,7 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -232.0
-offset_bottom = 50.0
+offset_bottom = 48.0
 grow_horizontal = 0
 color = Color(0.121569, 0.219608, 0.360784, 1)
 

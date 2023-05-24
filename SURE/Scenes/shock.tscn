@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bi5vix6ylto5a"]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource type="Script" path="res://Scenes/shock.gd" id="1_bkl8y"]
+[ext_resource type="Script" path="res://src/shock.gd" id="1_bkl8y"]
 [ext_resource type="Texture2D" uid="uid://dtc7lnxlbfgjf" path="res://willian-justen-de-vasconcellos-cIQ0wHskpMo-unsplash.jpg" id="1_s7q3d"]
 [ext_resource type="PackedScene" uid="uid://dgu02uh047h3m" path="res://Scenes/energy_bar.tscn" id="2_i1jhu"]
 

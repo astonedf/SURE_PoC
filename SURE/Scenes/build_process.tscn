@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://fm2wc8cg2syg"]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource type="Script" path="res://Scenes/farm.gd" id="1_lvhtj"]
+[ext_resource type="Script" path="res://src/farm.gd" id="1_lvhtj"]
 [ext_resource type="Texture2D" uid="uid://csvtdvdrgbyjn" path="res://Assets/spritesheet.png" id="2_d2fjf"]
 [ext_resource type="Texture2D" uid="uid://bjqjeth2ji61l" path="res://Assets/Buildings/construction_site_a.png" id="3_uneby"]
 

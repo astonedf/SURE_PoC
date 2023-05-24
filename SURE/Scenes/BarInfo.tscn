@@ -1,69 +1,86 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbawtnbermnvh"]
+[gd_scene load_steps=2 format=3 uid="uid://u1nvhv5ceok"]
 
-[ext_resource type="Script" path="res://Scenes/BarInfo.gd" id="1_okpj2"]
+[ext_resource type="Script" path="res://src/BarInfo.gd" id="1_hdqpt"]
 
-[node name="Control" type="ColorRect"]
-anchors_preset = -1
+[node name="BarInfo" type="Control"]
+layout_mode = 3
 anchor_right = 0.166
 anchor_bottom = 0.315
 offset_right = -0.23201
 offset_bottom = 3.87999
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.121569, 0.219608, 0.360784, 1)
-script = ExtResource("1_okpj2")
+script = ExtResource("1_hdqpt")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Control" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.121569, 0.219608, 0.360784, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
 custom_minimum_size = Vector2(0, 45)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.125654
-anchor_top = 0.0884238
-anchor_right = 0.879581
-anchor_bottom = 0.990385
+anchor_left = 0.000138142
+anchor_top = 0.0247346
+anchor_right = 0.753596
+anchor_bottom = 0.198189
+offset_left = 18.9738
+offset_top = 14.8552
+offset_right = 28.8167
+offset_bottom = 150.777
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="Control/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "Texte"
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="VBoxContainer"]
+[node name="Label2" type="Label" parent="Control/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "Texte"
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="VBoxContainer"]
+[node name="Label3" type="Label" parent="Control/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "Texte"
 vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="VBoxContainer"]
+[node name="Label4" type="Label" parent="Control/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 vertical_alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.125654
-anchor_top = 0.0884238
-anchor_right = 0.879581
-anchor_bottom = 0.951169
+anchor_left = -0.0209145
+anchor_top = 0.0151192
+anchor_right = 0.711491
+anchor_bottom = 0.181032
+offset_left = 18.9738
+offset_top = 14.8552
+offset_right = 43.8167
+offset_bottom = 152.345
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="VBoxContainer2"]
+[node name="Label" type="Label" parent="Control/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
@@ -71,7 +88,7 @@ text = "n"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="VBoxContainer2"]
+[node name="Label2" type="Label" parent="Control/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
@@ -79,7 +96,7 @@ text = "n"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="VBoxContainer2"]
+[node name="Label3" type="Label" parent="Control/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
@@ -87,10 +104,26 @@ text = " n"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="VBoxContainer2"]
+[node name="Label4" type="Label" parent="Control/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "n / max"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.125
+offset_top = -2.99998
+offset_right = 1.52588e-05
+offset_bottom = 5.00002
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

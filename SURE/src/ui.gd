@@ -60,3 +60,5 @@ func _on_energy_bar_reached():
 
 func _on_money_ui_pressed():
 	$ColorRect2/ColorRect.visible = !$ColorRect2/ColorRect.visible
+
+
