@@ -62,3 +62,7 @@ func _on_money_ui_pressed():
 	$ColorRect2/ColorRect.visible = !$ColorRect2/ColorRect.visible
 
 
+
+
+func _on_button_pressed():
+	$Window.visible = true

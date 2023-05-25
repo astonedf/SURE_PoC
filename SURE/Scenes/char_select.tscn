@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://qnw77bjuu8jw"]
+
+[node name="CharSelect" type="Control"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 3
+anchor_right = 0.181
+anchor_bottom = 0.049
+offset_right = -0.512009
+offset_bottom = 12.248
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 40.0
+color = Color(0.266667, 0.266667, 0.458824, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Text"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -16.0
+offset_right = 2.0
+offset_bottom = 40.0
+text = "<"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_right = 210.0
+offset_bottom = 40.0
+text = ">"

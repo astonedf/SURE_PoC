@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://bho2104p5e0rx"]
+[gd_scene load_steps=3 format=3 uid="uid://bho2104p5e0rx"]
+
+[ext_resource type="PackedScene" uid="uid://qnw77bjuu8jw" path="res://Scenes/char_select.tscn" id="1_3ecar"]
+[ext_resource type="Texture2D" uid="uid://byjtw7q3281rv" path="res://Assets/People/people_6_d.png" id="1_y3qam"]
 
 [node name="AvatarCreation" type="Control"]
 layout_mode = 3
@@ -12,11 +15,107 @@ grow_vertical = 2
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 568.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 552.0
+offset_bottom = -32.0
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.203922, 0.203922, 0.203922, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ColorRect"]
+layout_mode = 2
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 168.0
+offset_bottom = 536.0
+
+[node name="Label6" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Name :"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Hair :"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Shirt :"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Legs :"
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Shoes :"
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Hat :"
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/ColorRect"]
+layout_mode = 2
+offset_left = 254.0
+offset_top = 40.0
+offset_right = 382.0
+offset_bottom = 536.0
+
+[node name="Label6" type="LineEdit" parent="MarginContainer/ColorRect/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+placeholder_text = "Name"
+
+[node name="CharSelect" parent="MarginContainer/ColorRect/VBoxContainer2" instance=ExtResource("1_3ecar")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="CharSelect2" parent="MarginContainer/ColorRect/VBoxContainer2" instance=ExtResource("1_3ecar")]
 layout_mode = 2
+
+[node name="CharSelect3" parent="MarginContainer/ColorRect/VBoxContainer2" instance=ExtResource("1_3ecar")]
+layout_mode = 2
+
+[node name="CharSelect4" parent="MarginContainer/ColorRect/VBoxContainer2" instance=ExtResource("1_3ecar")]
+layout_mode = 2
+
+[node name="CharSelect5" parent="MarginContainer/ColorRect/VBoxContainer2" instance=ExtResource("1_3ecar")]
+layout_mode = 2
+
+[node name="CharSelect6" parent="MarginContainer/ColorRect/VBoxContainer2" instance=ExtResource("1_3ecar")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/ColorRect"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 472.0
+offset_right = 345.0
+offset_bottom = 549.0
+theme_override_font_sizes/font_size = 50
+text = "Create"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(808, 304)
+scale = Vector2(10, 10)
+texture = ExtResource("1_y3qam")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c23oje7wdhlyi"]
+[gd_scene load_steps=14 format=3 uid="uid://c23oje7wdhlyi"]
 
 [ext_resource type="PackedScene" uid="uid://bppme8g1xtgg8" path="res://Scenes/tilemap.tscn" id="1_8jtqx"]
 [ext_resource type="Texture2D" uid="uid://bov80q4d8x5jl" path="res://Assets/Buildings/house_small_yellow_b.png" id="2_8wmjp"]
@@ -7,14 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://dd4usnroeap8y" path="res://Assets/Buildings/warehouse_orange_b.png" id="5_ex311"]
 [ext_resource type="Texture2D" uid="uid://bpqqad3qr0s0a" path="res://Assets/Buildings/house_small_purple_a.png" id="6_8a8ec"]
 [ext_resource type="PackedScene" uid="uid://ct4blqwh4y6ab" path="res://Scenes/energy_plant.tscn" id="7_6x5m2"]
-[ext_resource type="Texture2D" uid="uid://81u7c4lqok50" path="res://Assets/People/people_2_a.png" id="7_ljggt"]
 [ext_resource type="Texture2D" uid="uid://ywn3w3u7101f" path="res://Assets/Buildings/building_small_gray_b.png" id="8_7d7gc"]
+[ext_resource type="PackedScene" uid="uid://dsu6t86pxh6ch" path="res://Scenes/avatar.tscn" id="8_liuie"]
 [ext_resource type="Texture2D" uid="uid://cvdjme5hto1ao" path="res://Assets/People/people_1_b.png" id="8_wpqsw"]
-[ext_resource type="Texture2D" uid="uid://dkoss0mydp0kj" path="res://Assets/People/people_4_b.png" id="9_a5p6h"]
 [ext_resource type="Texture2D" uid="uid://dfb8j0dgkthdj" path="res://Assets/Buildings/water_tower_b_damaged.png" id="9_swixi"]
-[ext_resource type="Texture2D" uid="uid://bhfxrylm2sf5h" path="res://Assets/People/people_5_d.png" id="10_qpcoi"]
-[ext_resource type="Texture2D" uid="uid://bskqc02rhk72n" path="res://Assets/People/people_6_c.png" id="11_col61"]
 [ext_resource type="PackedScene" uid="uid://banvqdghwoj3p" path="res://Scenes/build_button.tscn" id="16_pnu0i"]
+
+[sub_resource type="Theme" id="Theme_mklkc"]
 
 [node name="World" type="Node2D"]
 
@@ -53,26 +52,22 @@ texture = ExtResource("5_ex311")
 position = Vector2(915, 181)
 texture = ExtResource("6_8a8ec")
 
-[node name="People2A" type="Sprite2D" parent="Props"]
-position = Vector2(341, 289)
-texture = ExtResource("7_ljggt")
-
 [node name="People1B" type="Sprite2D" parent="Props"]
 texture_filter = 1
 position = Vector2(370, 406)
 texture = ExtResource("8_wpqsw")
 
-[node name="People4B" type="Sprite2D" parent="Props"]
-position = Vector2(817, 316)
-texture = ExtResource("9_a5p6h")
+[node name="Avatar" parent="Props" instance=ExtResource("8_liuie")]
+position = Vector2(521, 392)
 
-[node name="People5D" type="Sprite2D" parent="Props"]
-position = Vector2(841, 333)
-texture = ExtResource("10_qpcoi")
+[node name="Avatar2" parent="Props" instance=ExtResource("8_liuie")]
+position = Vector2(679, 358)
 
-[node name="People6B" type="Sprite2D" parent="Props"]
-position = Vector2(874, 205)
-texture = ExtResource("11_col61")
+[node name="Avatar3" parent="Props" instance=ExtResource("8_liuie")]
+position = Vector2(877, 210)
+
+[node name="Avatar4" parent="Props" instance=ExtResource("8_liuie")]
+position = Vector2(921, 388)
 
 [node name="Nuclear" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(439, 259)
@@ -92,7 +87,7 @@ polygon = PackedVector2Array(-16, 65, -84, 31, -89, -28, -22, -64, 46, -31, 45, 
 
 [node name="Coal" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(741, 212)
-label_name = "Coal"
+label_name = "Gas"
 energy = 100
 prod = 50
 poll = true
@@ -113,6 +108,7 @@ offset_top = 393.0
 offset_right = 506.0
 offset_bottom = 443.0
 mouse_default_cursor_shape = 2
+theme = SubResource("Theme_mklkc")
 theme_override_colors/font_pressed_color = Color(0.372549, 0.372549, 0.372549, 1)
 button_list = [["10W Solar Farm 75$", 75, 10, 0], ["15W Solar Farm 100$", 100, 15, 0]]
 path = "farm"
@@ -142,7 +138,7 @@ offset_left = 438.0
 offset_top = 149.0
 offset_right = 486.0
 offset_bottom = 180.0
-button_list = [["Gas Plant 100$", 100, 100, 100]]
+button_list = [["Biomass Plant 100$", 100, 100, 100]]
 path = "energy_plant"
 
 [editable path="Nuclear"]

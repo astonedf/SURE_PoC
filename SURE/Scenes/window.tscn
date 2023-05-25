@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://jj476u8yn2g8"]
+[gd_scene load_steps=3 format=3 uid="uid://jj476u8yn2g8"]
 
-[ext_resource type="Texture2D" uid="uid://vakeu7mmf084" path="res://icon.svg" id="1_t74m5"]
+[ext_resource type="Script" path="res://Scenes/window.gd" id="1_y1ckm"]
 
-[node name="Window" type="CanvasLayer"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77vk0"]
+bg_color = Color(0.196078, 0.545098, 0.968627, 1)
+
+[node name="Policy" type="CanvasLayer"]
+script = ExtResource("1_y1ckm")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -20,12 +24,12 @@ offset_left = 176.0
 offset_top = 64.0
 offset_right = 1008.0
 offset_bottom = 576.0
-color = Color(0.843137, 0.921569, 0.968627, 1)
+color = Color(0.823529, 0.823529, 0.870588, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/ColorRect"]
 layout_mode = 2
-offset_left = 16.0
-offset_top = 16.0
+offset_left = 48.0
+offset_top = 56.0
 offset_right = 288.0
 offset_bottom = 496.0
 grow_vertical = 2
@@ -58,17 +62,17 @@ text = "Policy n"
 [node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/ColorRect"]
 layout_mode = 0
 offset_left = 336.0
-offset_top = 80.0
-offset_right = 792.0
-offset_bottom = 472.0
-color = Color(0.902066, 0.952443, 0.98218, 1)
+offset_top = 64.0
+offset_right = 808.0
+offset_bottom = 488.0
+color = Color(0.900945, 0.901041, 0.92816, 1)
 
 [node name="Title" type="Label" parent="MarginContainer/Panel/ColorRect"]
 layout_mode = 0
-offset_left = 360.0
-offset_top = 24.0
-offset_right = 568.0
-offset_bottom = 64.0
+offset_left = 304.0
+offset_top = 8.0
+offset_right = 512.0
+offset_bottom = 55.0
 theme_override_colors/font_color = Color(0.270588, 0.270588, 0.270588, 1)
 theme_override_font_sizes/font_size = 31
 text = "Policy"
@@ -89,22 +93,42 @@ autowrap_mode = 3
 [node name="Effect" type="Label" parent="MarginContainer/Panel/ColorRect"]
 layout_mode = 0
 offset_left = 360.0
-offset_top = 344.0
+offset_top = 334.0
 offset_right = 768.0
-offset_bottom = 456.0
+offset_bottom = 446.0
 theme_override_colors/font_color = Color(0.270588, 0.270588, 0.270588, 1)
 theme_override_font_sizes/font_size = 15
-text = "+ n ⚡    
-- n 💰      
-n turns 🕒"
+text = "Effects:
+ + n ⚡    - n 💰      n turns 🕒
+Estimated popularity with voters:"
 horizontal_alignment = 1
-vertical_alignment = 3
 autowrap_mode = 3
 
-[node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 88.0
-offset_top = 160.0
-offset_right = 216.0
-offset_bottom = 288.0
-scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("1_t74m5")
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/Panel/ColorRect"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 413.0
+offset_right = 680.0
+offset_bottom = 440.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_77vk0")
+value = 42.0
+
+[node name="Button" type="Button" parent="MarginContainer/Panel/ColorRect"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 448.0
+offset_right = 613.0
+offset_bottom = 479.0
+text = "Implement"
+
+[node name="Button2" type="Button" parent="MarginContainer/Panel/ColorRect"]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 8.0
+offset_right = 818.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "X"
+flat = true
+
+[connection signal="pressed" from="MarginContainer/Panel/ColorRect/Button2" to="." method="_on_button_2_pressed"]
