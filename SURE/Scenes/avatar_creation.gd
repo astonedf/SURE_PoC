@@ -33,3 +33,7 @@ func _process(delta):
 func _on_h_slider_value_changed(value):
 	$Party.text = parties[value]
 	$Def.text = def[value]
+
+
+func _on_button_pressed():
+	pass # Replace with function body.

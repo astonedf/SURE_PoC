@@ -62,12 +62,39 @@ position = Vector2(521, 392)
 
 [node name="Avatar2" parent="Props" instance=ExtResource("8_liuie")]
 position = Vector2(679, 358)
+pol = 1
 
 [node name="Avatar3" parent="Props" instance=ExtResource("8_liuie")]
 position = Vector2(877, 210)
+pol = 1
 
 [node name="Avatar4" parent="Props" instance=ExtResource("8_liuie")]
 position = Vector2(921, 388)
+pol = 3
+
+[node name="Avatar5" parent="Props" instance=ExtResource("8_liuie")]
+position = Vector2(858, 317)
+pol = 3
+
+[node name="Avatar6" parent="Props" instance=ExtResource("8_liuie")]
+position = Vector2(829, 390)
+pol = 3
+
+[node name="Avatar7" parent="Props" instance=ExtResource("8_liuie")]
+position = Vector2(987, 263)
+pol = 3
+
+[node name="Avatar8" parent="Props" instance=ExtResource("8_liuie")]
+position = Vector2(1019, 321)
+pol = 2
+
+[node name="Avatar9" parent="Props" instance=ExtResource("8_liuie")]
+position = Vector2(836, 256)
+pol = 1
+
+[node name="Avatar10" parent="Props" instance=ExtResource("8_liuie")]
+position = Vector2(580, 256)
+pol = 1
 
 [node name="Nuclear" parent="." instance=ExtResource("7_6x5m2")]
 position = Vector2(439, 259)

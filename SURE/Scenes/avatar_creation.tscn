@@ -1,14 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bho2104p5e0rx"]
+[gd_scene load_steps=5 format=3 uid="uid://bho2104p5e0rx"]
 
 [ext_resource type="PackedScene" uid="uid://qnw77bjuu8jw" path="res://Scenes/char_select.tscn" id="1_3ecar"]
 [ext_resource type="Script" path="res://Scenes/avatar_creation.gd" id="1_5vj1s"]
 [ext_resource type="Texture2D" uid="uid://byjtw7q3281rv" path="res://Assets/People/people_6_d.png" id="1_y3qam"]
-[ext_resource type="Texture2D" uid="uid://crq37voiwqvfg" path="res://wellfare.PNG" id="4_o85xl"]
-[ext_resource type="Texture2D" uid="uid://cusbv626fci2u" path="res://union.PNG" id="5_ee66h"]
-[ext_resource type="Texture2D" uid="uid://c77oa3o1151jn" path="res://taxcuts.PNG" id="6_0cy1c"]
-[ext_resource type="Texture2D" uid="uid://bfkx0xpu20hoc" path="res://socialjustice.PNG" id="7_bv3h4"]
-[ext_resource type="Texture2D" uid="uid://q0bfegicriuu" path="res://freemarket.PNG" id="8_6xppx"]
-[ext_resource type="Texture2D" uid="uid://bu36804cwpgvr" path="res://nationalism.PNG" id="9_pii1b"]
+[ext_resource type="PackedScene" uid="uid://25w3nfdvpncy" path="res://Scenes/badges.tscn" id="4_g8vnt"]
 
 [node name="AvatarCreation" type="Control"]
 layout_mode = 3
@@ -98,19 +93,20 @@ offset_top = 528.0
 offset_right = 320.0
 offset_bottom = 583.0
 theme_override_font_sizes/font_size = 25
-text = "Create"
+text = "Next"
 
-[node name="Label6" type="LineEdit" parent="."]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-offset_left = 280.0
-offset_top = 64.0
-offset_right = 408.0
-offset_bottom = 114.0
-theme_override_font_sizes/font_size = 25
-placeholder_text = "Name"
+[node name="Avatar" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(934, 304)
+scale = Vector2(10, 10)
+texture = ExtResource("1_y3qam")
 
-[node name="Label7" type="SpinBox" parent="."]
+[node name="Qs" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label7" type="SpinBox" parent="Qs"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 offset_left = 280.0
@@ -122,12 +118,12 @@ max_value = 99.0
 value = 18.0
 alignment = 1
 
-[node name="Label8" type="OptionButton" parent="."]
+[node name="Label8" type="OptionButton" parent="Qs"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 offset_left = 280.0
 offset_top = 209.0
-offset_right = 408.0
+offset_right = 490.0
 offset_bottom = 259.0
 theme_override_font_sizes/font_size = 25
 item_count = 3
@@ -138,13 +134,7 @@ popup/item_1/id = 1
 popup/item_2/text = "Lawyer"
 popup/item_2/id = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(934, 304)
-scale = Vector2(10, 10)
-texture = ExtResource("1_y3qam")
-
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="Qs"]
 layout_mode = 0
 offset_left = 170.0
 offset_top = 72.0
@@ -153,7 +143,7 @@ offset_bottom = 110.0
 theme_override_font_sizes/font_size = 25
 text = "Name : "
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label2" type="Label" parent="Qs"]
 layout_mode = 0
 offset_left = 198.0
 offset_top = 144.0
@@ -162,7 +152,7 @@ offset_bottom = 182.0
 theme_override_font_sizes/font_size = 25
 text = "Age : "
 
-[node name="Label3" type="Label" parent="."]
+[node name="Label3" type="Label" parent="Qs"]
 layout_mode = 0
 offset_left = 118.0
 offset_top = 216.0
@@ -171,7 +161,7 @@ offset_bottom = 254.0
 theme_override_font_sizes/font_size = 25
 text = "Profession : "
 
-[node name="HSlider" type="HSlider" parent="."]
+[node name="HSlider" type="HSlider" parent="Qs"]
 layout_mode = 0
 offset_left = 69.0
 offset_top = 298.0
@@ -181,7 +171,7 @@ max_value = 6.0
 tick_count = 7
 ticks_on_borders = true
 
-[node name="Party" type="Label" parent="."]
+[node name="Party" type="Label" parent="Qs"]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 344.0
@@ -192,7 +182,7 @@ text = "Social-Democratic Party"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Def" type="Label" parent="."]
+[node name="Def" type="Label" parent="Qs"]
 layout_mode = 0
 offset_left = 160.0
 offset_top = 385.0
@@ -202,28 +192,23 @@ text = "State-centered, progressive, Strong environmental protection"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="ItemList" type="ItemList" parent="."]
-layout_mode = 0
-offset_left = 128.0
-offset_top = 442.0
-offset_right = 456.0
-offset_bottom = 536.0
-select_mode = 1
-max_text_lines = 3
-item_count = 7
-max_columns = 3
-item_0/text = "Green Energy"
-item_0/icon = ExtResource("4_o85xl")
-item_1/text = "Energy Sovereignty"
-item_1/icon = ExtResource("5_ee66h")
-item_2/text = "Energy Affordability"
-item_2/icon = ExtResource("6_0cy1c")
-item_3/text = "Free Energy Market"
-item_3/icon = ExtResource("7_bv3h4")
-item_4/text = "Flourishing Nature"
-item_4/icon = ExtResource("8_6xppx")
-item_5/text = "Preserve way of life"
-item_5/icon = ExtResource("9_pii1b")
-item_6/text = "Energy Sufficiency"
+[node name="Label6" type="LineEdit" parent="Qs"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+offset_left = 280.0
+offset_top = 64.0
+offset_right = 408.0
+offset_bottom = 114.0
+theme_override_font_sizes/font_size = 25
+placeholder_text = "Name"
 
-[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
+[node name="Badges" parent="." instance=ExtResource("4_g8vnt")]
+visible = false
+layout_mode = 0
+offset_left = 124.0
+offset_top = 57.0
+offset_right = 452.0
+offset_bottom = 523.0
+
+[connection signal="pressed" from="MarginContainer/ColorRect/Button" to="." method="_on_button_pressed"]
+[connection signal="value_changed" from="Qs/HSlider" to="." method="_on_h_slider_value_changed"]

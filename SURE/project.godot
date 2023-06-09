@@ -17,8 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Context="*res://Scenes/context.tscn"
-Ui="*res://Scenes/ui.tscn"
+Ui="res://Scenes/ui.tscn"
 
 [display]
 

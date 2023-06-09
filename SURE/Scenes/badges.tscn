@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://25w3nfdvpncy"]
+
+[ext_resource type="Texture2D" uid="uid://crq37voiwqvfg" path="res://wellfare.PNG" id="1_8nypb"]
+[ext_resource type="Texture2D" uid="uid://cusbv626fci2u" path="res://union.PNG" id="2_alxwl"]
+[ext_resource type="Texture2D" uid="uid://c77oa3o1151jn" path="res://taxcuts.PNG" id="3_rc1it"]
+[ext_resource type="Texture2D" uid="uid://bfkx0xpu20hoc" path="res://socialjustice.PNG" id="4_w3by8"]
+[ext_resource type="Texture2D" uid="uid://q0bfegicriuu" path="res://freemarket.PNG" id="5_glyne"]
+[ext_resource type="Texture2D" uid="uid://bu36804cwpgvr" path="res://nationalism.PNG" id="6_5lckj"]
+
+[node name="Badges" type="ItemList"]
+offset_left = 128.0
+offset_top = 442.0
+offset_right = 456.0
+offset_bottom = 536.0
+select_mode = 1
+max_text_lines = 3
+item_count = 7
+max_columns = 3
+item_0/text = "Green Energy"
+item_0/icon = ExtResource("1_8nypb")
+item_1/text = "Energy Sovereignty"
+item_1/icon = ExtResource("2_alxwl")
+item_2/text = "Energy Affordability"
+item_2/icon = ExtResource("3_rc1it")
+item_3/text = "Free Energy Market"
+item_3/icon = ExtResource("4_w3by8")
+item_4/text = "Flourishing Nature"
+item_4/icon = ExtResource("5_glyne")
+item_5/text = "Preserve way of life"
+item_5/icon = ExtResource("6_5lckj")
+item_6/text = "Energy Sufficiency"
