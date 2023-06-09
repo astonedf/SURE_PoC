@@ -20,115 +20,297 @@ layout_mode = 2
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel"]
 layout_mode = 0
-offset_left = 176.0
-offset_top = 64.0
-offset_right = 1008.0
-offset_bottom = 576.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 1128.0
+offset_bottom = 624.0
 color = Color(0.823529, 0.823529, 0.870588, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/ColorRect"]
-layout_mode = 2
-offset_left = 48.0
-offset_top = 56.0
-offset_right = 288.0
-offset_bottom = 496.0
-grow_vertical = 2
-
-[node name="Button" type="Button" parent="MarginContainer/Panel/ColorRect/VBoxContainer"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 2
-text = "Policy 1"
-
-[node name="Button2" type="Button" parent="MarginContainer/Panel/ColorRect/VBoxContainer"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 2
-text = "Policy 2"
-
-[node name="Button3" type="Button" parent="MarginContainer/Panel/ColorRect/VBoxContainer"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 2
-text = "Policy 3"
-
-[node name="Button4" type="Button" parent="MarginContainer/Panel/ColorRect/VBoxContainer"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 2
-text = "Policy 4"
-
-[node name="Button5" type="Button" parent="MarginContainer/Panel/ColorRect/VBoxContainer"]
-custom_minimum_size = Vector2(0, 80)
-layout_mode = 2
-text = "Policy n"
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/ColorRect"]
 layout_mode = 0
-offset_left = 336.0
-offset_top = 64.0
-offset_right = 808.0
-offset_bottom = 488.0
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 1048.0
+offset_bottom = 176.0
+color = Color(0.900945, 0.901041, 0.92816, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="MarginContainer/Panel/ColorRect"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 192.0
+offset_right = 1048.0
+offset_bottom = 360.0
+color = Color(0.900945, 0.901041, 0.92816, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="MarginContainer/Panel/ColorRect"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 376.0
+offset_right = 1048.0
+offset_bottom = 544.0
 color = Color(0.900945, 0.901041, 0.92816, 1)
 
 [node name="Title" type="Label" parent="MarginContainer/Panel/ColorRect"]
 layout_mode = 0
-offset_left = 304.0
-offset_top = 8.0
-offset_right = 512.0
-offset_bottom = 55.0
+offset_left = 48.0
+offset_top = 24.0
+offset_right = 256.0
+offset_bottom = 71.0
 theme_override_colors/font_color = Color(0.270588, 0.270588, 0.270588, 1)
-theme_override_font_sizes/font_size = 31
-text = "Policy"
+theme_override_font_sizes/font_size = 20
+text = "Information"
 vertical_alignment = 1
 
-[node name="Text" type="Label" parent="MarginContainer/Panel/ColorRect"]
+[node name="Title2" type="Label" parent="MarginContainer/Panel/ColorRect"]
 layout_mode = 0
-offset_left = 360.0
-offset_top = 104.0
-offset_right = 768.0
-offset_bottom = 360.0
+offset_left = 48.0
+offset_top = 376.0
+offset_right = 256.0
+offset_bottom = 423.0
+theme_override_colors/font_color = Color(0.270588, 0.270588, 0.270588, 1)
+theme_override_font_sizes/font_size = 20
+text = "Regulation"
+vertical_alignment = 1
+
+[node name="Title3" type="Label" parent="MarginContainer/Panel/ColorRect"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 192.0
+offset_right = 256.0
+offset_bottom = 239.0
+theme_override_colors/font_color = Color(0.270588, 0.270588, 0.270588, 1)
+theme_override_font_sizes/font_size = 20
+text = "Subsidy / Tax"
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="MarginContainer/Panel/ColorRect"]
+layout_mode = 0
+offset_left = 1080.0
+offset_right = 1098.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "X"
+flat = true
+
+[node name="Button3" type="Button" parent="MarginContainer/Panel/ColorRect"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+offset_left = 176.0
+offset_top = 64.0
+offset_right = 264.0
+offset_bottom = 144.0
+tooltip_text = "Information campaign explaining the advantages of renewable energy."
+theme_override_font_sizes/font_size = 35
+text = "🍃"
+
+[node name="Button4" type="Button" parent="MarginContainer/Panel/ColorRect"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+offset_left = 64.0
+offset_top = 248.0
+offset_right = 152.0
+offset_bottom = 328.0
+theme_override_font_sizes/font_size = 35
+text = "🌬"
+
+[node name="Button11" type="Button" parent="MarginContainer/Panel/ColorRect"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+offset_left = 64.0
+offset_top = 440.0
+offset_right = 152.0
+offset_bottom = 520.0
+theme_override_font_sizes/font_size = 35
+text = "🌬"
+
+[node name="Button5" type="Button" parent="MarginContainer/Panel/ColorRect"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+offset_left = 176.0
+offset_top = 248.0
+offset_right = 264.0
+offset_bottom = 328.0
+theme_override_font_sizes/font_size = 35
+text = "🌞"
+
+[node name="Button12" type="Button" parent="MarginContainer/Panel/ColorRect"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+offset_left = 176.0
+offset_top = 440.0
+offset_right = 264.0
+offset_bottom = 520.0
+theme_override_font_sizes/font_size = 35
+text = "🌞"
+
+[node name="Button6" type="Button" parent="MarginContainer/Panel/ColorRect"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+offset_left = 832.0
+offset_top = 64.0
+offset_right = 920.0
+offset_bottom = 144.0
+tooltip_text = "Information campaign explaining the advantages of heating systems relying on renewable energy. "
+theme_override_font_sizes/font_size = 35
+text = "♨"
+
+[node name="Button7" type="Button" parent="MarginContainer/Panel/ColorRect"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+offset_left = 512.0
+offset_top = 64.0
+offset_right = 600.0
+offset_bottom = 144.0
+tooltip_text = "Information campaign explaining the advantages of alternatives to fossil-fuel cars."
+theme_override_font_sizes/font_size = 25
+text = "🚊🚘"
+
+[node name="Button8" type="Button" parent="MarginContainer/Panel/ColorRect"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+offset_left = 288.0
+offset_top = 248.0
+offset_right = 376.0
+offset_bottom = 328.0
+theme_override_font_sizes/font_size = 35
+text = "🗑"
+
+[node name="Button13" type="Button" parent="MarginContainer/Panel/ColorRect"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+offset_left = 288.0
+offset_top = 440.0
+offset_right = 376.0
+offset_bottom = 520.0
+theme_override_font_sizes/font_size = 35
+text = "🗑"
+
+[node name="Button9" type="Button" parent="MarginContainer/Panel/ColorRect"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+offset_left = 456.0
+offset_top = 248.0
+offset_right = 536.0
+offset_bottom = 328.0
+theme_override_font_sizes/font_size = 35
+text = "📈"
+
+[node name="Button14" type="Button" parent="MarginContainer/Panel/ColorRect"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+offset_left = 776.0
+offset_top = 256.0
+offset_right = 856.0
+offset_bottom = 336.0
+theme_override_font_sizes/font_size = 35
+text = "📈"
+
+[node name="Button17" type="Button" parent="MarginContainer/Panel/ColorRect"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+offset_left = 832.0
+offset_top = 440.0
+offset_right = 912.0
+offset_bottom = 520.0
+theme_override_font_sizes/font_size = 35
+text = "🔄"
+
+[node name="Button16" type="Button" parent="MarginContainer/Panel/ColorRect"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+offset_left = 512.0
+offset_top = 440.0
+offset_right = 592.0
+offset_bottom = 520.0
+theme_override_font_sizes/font_size = 35
+text = "🚫"
+
+[node name="Button10" type="Button" parent="MarginContainer/Panel/ColorRect"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+offset_left = 888.0
+offset_top = 256.0
+offset_right = 968.0
+offset_bottom = 336.0
+theme_override_font_sizes/font_size = 35
+text = "📉"
+
+[node name="Button15" type="Button" parent="MarginContainer/Panel/ColorRect"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+offset_left = 568.0
+offset_top = 248.0
+offset_right = 656.0
+offset_bottom = 328.0
+theme_override_font_sizes/font_size = 35
+text = "📉"
+
+[node name="Panel" type="Panel" parent="MarginContainer/Panel"]
+visible = false
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect2" type="ColorRect" parent="MarginContainer/Panel/Panel"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 144.0
+offset_right = 896.0
+offset_bottom = 504.0
+
+[node name="Text" type="Label" parent="MarginContainer/Panel/Panel/ColorRect2"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 48.0
+offset_right = 576.0
+offset_bottom = 136.0
 theme_override_colors/font_color = Color(0.270588, 0.270588, 0.270588, 1)
 theme_override_font_sizes/font_size = 15
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-horizontal_alignment = 3
+text = "Information campaign / Raise grants / Guaranteed purchase of _"
 autowrap_mode = 3
 
-[node name="Effect" type="Label" parent="MarginContainer/Panel/ColorRect"]
+[node name="Label" type="Label" parent="MarginContainer/Panel/Panel/ColorRect2"]
 layout_mode = 0
-offset_left = 360.0
-offset_top = 334.0
-offset_right = 768.0
-offset_bottom = 446.0
+offset_right = 112.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Policy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Effect" type="Label" parent="MarginContainer/Panel/Panel/ColorRect2"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 104.0
+offset_right = 536.0
+offset_bottom = 254.0
 theme_override_colors/font_color = Color(0.270588, 0.270588, 0.270588, 1)
 theme_override_font_sizes/font_size = 15
 text = "Effects:
- + n ⚡    - n 💰      n turns 🕒
+ + n ⚡   
+ - n 💰     
+ n turns 
+
 Estimated popularity with voters:"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/Panel/ColorRect"]
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/Panel/Panel/ColorRect2"]
 layout_mode = 0
-offset_left = 448.0
-offset_top = 413.0
-offset_right = 680.0
-offset_bottom = 440.0
+offset_left = 224.0
+offset_top = 264.0
+offset_right = 456.0
+offset_bottom = 291.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_77vk0")
 value = 42.0
 
-[node name="Button" type="Button" parent="MarginContainer/Panel/ColorRect"]
+[node name="Button" type="Button" parent="MarginContainer/Panel/Panel/ColorRect2"]
 layout_mode = 0
-offset_left = 520.0
-offset_top = 448.0
-offset_right = 613.0
-offset_bottom = 479.0
+offset_left = 288.0
+offset_top = 312.0
+offset_right = 381.0
+offset_bottom = 343.0
 text = "Implement"
-
-[node name="Button2" type="Button" parent="MarginContainer/Panel/ColorRect"]
-layout_mode = 0
-offset_left = 800.0
-offset_top = 8.0
-offset_right = 818.0
-offset_bottom = 39.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "X"
-flat = true
 
 [connection signal="pressed" from="MarginContainer/Panel/ColorRect/Button2" to="." method="_on_button_2_pressed"]

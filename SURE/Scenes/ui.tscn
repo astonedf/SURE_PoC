@@ -23,7 +23,6 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [node name="UI" type="CanvasLayer"]
-visible = false
 follow_viewport_enabled = true
 script = ExtResource("1_blqjq")
 env = 50
