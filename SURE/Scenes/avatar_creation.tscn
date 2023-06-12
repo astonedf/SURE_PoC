@@ -159,7 +159,7 @@ offset_top = 216.0
 offset_right = 265.0
 offset_bottom = 254.0
 theme_override_font_sizes/font_size = 25
-text = "Profession : "
+text = "Previous job : "
 
 [node name="HSlider" type="HSlider" parent="Qs"]
 layout_mode = 0
