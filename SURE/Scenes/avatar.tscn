@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dsu6t86pxh6ch"]
 
 [ext_resource type="Script" path="res://src/avatar.gd" id="1_au3xk"]
-[ext_resource type="Texture2D" uid="uid://bcfq07hru45wv" path="res://Assets/People/people_1_a.png" id="1_vco17"]
+[ext_resource type="Texture2D" uid="uid://cuw1crsi88u68" path="res://Assets/Borja/230601_CH_SUREgame_SKETCHES-AVATAR2.png" id="2_jadaa"]
 [ext_resource type="Texture2D" uid="uid://drcw0kxf6hoqa" path="res://Assets/bubble.png" id="2_tk30j"]
 [ext_resource type="Texture2D" uid="uid://c77oa3o1151jn" path="res://taxcuts.PNG" id="4_es0ss"]
 [ext_resource type="Texture2D" uid="uid://cusbv626fci2u" path="res://union.PNG" id="5_qkthh"]
@@ -47,8 +47,9 @@ _data = {
 script = ExtResource("1_au3xk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-texture = ExtResource("1_vco17")
+texture_filter = 2
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_jadaa")
 
 [node name="Bubble" type="Sprite2D" parent="."]
 visible = false

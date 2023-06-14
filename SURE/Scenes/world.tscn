@@ -1,16 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://c23oje7wdhlyi"]
+[gd_scene load_steps=7 format=3 uid="uid://c23oje7wdhlyi"]
 
 [ext_resource type="PackedScene" uid="uid://bppme8g1xtgg8" path="res://Scenes/tilemap.tscn" id="1_8jtqx"]
-[ext_resource type="Texture2D" uid="uid://bov80q4d8x5jl" path="res://Assets/Buildings/house_small_yellow_b.png" id="2_8wmjp"]
-[ext_resource type="Texture2D" uid="uid://dq5cdm6dllp74" path="res://Assets/Buildings/house_medium_brown_a.png" id="3_kes3l"]
-[ext_resource type="Texture2D" uid="uid://63w8wmwb21lk" path="res://Assets/Buildings/house_small_blue_b.png" id="4_uogwk"]
-[ext_resource type="Texture2D" uid="uid://dd4usnroeap8y" path="res://Assets/Buildings/warehouse_orange_b.png" id="5_ex311"]
-[ext_resource type="Texture2D" uid="uid://bpqqad3qr0s0a" path="res://Assets/Buildings/house_small_purple_a.png" id="6_8a8ec"]
+[ext_resource type="Texture2D" uid="uid://cy80yqth2kk8r" path="res://Assets/Borja/230601_CH_SUREgame_SKETCHES-MAP.png" id="1_a32ik"]
 [ext_resource type="PackedScene" uid="uid://ct4blqwh4y6ab" path="res://Scenes/energy_plant.tscn" id="7_6x5m2"]
-[ext_resource type="Texture2D" uid="uid://ywn3w3u7101f" path="res://Assets/Buildings/building_small_gray_b.png" id="8_7d7gc"]
 [ext_resource type="PackedScene" uid="uid://dsu6t86pxh6ch" path="res://Scenes/avatar.tscn" id="8_liuie"]
-[ext_resource type="Texture2D" uid="uid://cvdjme5hto1ao" path="res://Assets/People/people_1_b.png" id="8_wpqsw"]
-[ext_resource type="Texture2D" uid="uid://dfb8j0dgkthdj" path="res://Assets/Buildings/water_tower_b_damaged.png" id="9_swixi"]
 [ext_resource type="PackedScene" uid="uid://banvqdghwoj3p" path="res://Scenes/build_button.tscn" id="16_pnu0i"]
 
 [sub_resource type="Theme" id="Theme_mklkc"]
@@ -25,86 +18,64 @@ offset_bottom = 729.0
 mouse_filter = 1
 color = Color(0.489691, 0.374696, 0.205397, 1)
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-978, -283)
+scale = Vector2(2, 2)
+texture = ExtResource("1_a32ik")
+centered = false
+
 [node name="Tilemap" parent="." instance=ExtResource("1_8jtqx")]
+visible = false
 position = Vector2(-82, 88)
 scale = Vector2(0.75, 0.75)
 
 [node name="Props" type="Node2D" parent="."]
 
-[node name="BuildingMediumBlueA" type="Sprite2D" parent="Props"]
-position = Vector2(472, 109)
-texture = ExtResource("2_8wmjp")
-
-[node name="HouseMediumBrownA" type="Sprite2D" parent="Props"]
-position = Vector2(980, 369)
-texture = ExtResource("3_kes3l")
-
-[node name="HouseSmallBlueB" type="Sprite2D" parent="Props"]
-position = Vector2(242, 369)
-texture = ExtResource("4_uogwk")
-
-[node name="WarehouseOrangeB" type="Sprite2D" parent="Props"]
-position = Vector2(227, 225)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("5_ex311")
-
-[node name="HouseSmallPurpleA" type="Sprite2D" parent="Props"]
-position = Vector2(915, 181)
-texture = ExtResource("6_8a8ec")
-
-[node name="People1B" type="Sprite2D" parent="Props"]
-texture_filter = 1
-position = Vector2(370, 406)
-texture = ExtResource("8_wpqsw")
-
 [node name="Avatar" parent="Props" instance=ExtResource("8_liuie")]
-position = Vector2(521, 392)
+position = Vector2(379, 458)
 
 [node name="Avatar2" parent="Props" instance=ExtResource("8_liuie")]
-position = Vector2(679, 358)
+position = Vector2(612, 748)
 pol = 1
 
 [node name="Avatar3" parent="Props" instance=ExtResource("8_liuie")]
-position = Vector2(877, 210)
+position = Vector2(459, 409)
 pol = 1
 
 [node name="Avatar4" parent="Props" instance=ExtResource("8_liuie")]
-position = Vector2(921, 388)
+position = Vector2(1670, 363)
 pol = 3
 
 [node name="Avatar5" parent="Props" instance=ExtResource("8_liuie")]
-position = Vector2(858, 317)
+position = Vector2(1480, 441)
 pol = 3
 
 [node name="Avatar6" parent="Props" instance=ExtResource("8_liuie")]
-position = Vector2(829, 390)
+position = Vector2(940, 711)
 pol = 3
 
 [node name="Avatar7" parent="Props" instance=ExtResource("8_liuie")]
-position = Vector2(987, 263)
+position = Vector2(258, 558)
 pol = 3
 
 [node name="Avatar8" parent="Props" instance=ExtResource("8_liuie")]
-position = Vector2(1019, 321)
+position = Vector2(1090, 198)
 pol = 2
 
 [node name="Avatar9" parent="Props" instance=ExtResource("8_liuie")]
-position = Vector2(836, 256)
+position = Vector2(1608, 309)
 pol = 1
 
 [node name="Avatar10" parent="Props" instance=ExtResource("8_liuie")]
-position = Vector2(580, 256)
+position = Vector2(535, 719)
 pol = 1
 
 [node name="Nuclear" parent="." instance=ExtResource("7_6x5m2")]
-position = Vector2(439, 259)
+position = Vector2(998, 269)
 label_name = "Nuclear"
 energy = 250
 prod = 100
 metadata/_edit_group_ = true
-
-[node name="Sprite2D" parent="Nuclear" index="1"]
-texture = ExtResource("8_7d7gc")
 
 [node name="Label" parent="Nuclear/ColorRect" index="0"]
 text = "Nuclear"
@@ -113,15 +84,12 @@ text = "Nuclear"
 polygon = PackedVector2Array(-16, 65, -84, 31, -89, -28, -22, -64, 46, -31, 45, 28)
 
 [node name="Coal" parent="." instance=ExtResource("7_6x5m2")]
-position = Vector2(741, 212)
+position = Vector2(923, 505)
 label_name = "Gas"
 energy = 100
 prod = 50
 poll = true
 metadata/_edit_group_ = true
-
-[node name="Sprite2D" parent="Coal" index="1"]
-texture = ExtResource("9_swixi")
 
 [node name="Label" parent="Coal/ColorRect" index="0"]
 text = "Coal"
@@ -130,10 +98,10 @@ text = "Coal"
 polygon = PackedVector2Array(-10, 67, -80, 37, -83, 11, -54, -4, -49, -61, -13, -69, 18, -57, 17, -11, 51, 11, 54, 35)
 
 [node name="BuildSolar" parent="." instance=ExtResource("16_pnu0i")]
-offset_left = 414.0
-offset_top = 393.0
-offset_right = 506.0
-offset_bottom = 443.0
+offset_left = 472.0
+offset_top = 567.0
+offset_right = 564.0
+offset_bottom = 617.0
 mouse_default_cursor_shape = 2
 theme = SubResource("Theme_mklkc")
 theme_override_colors/font_pressed_color = Color(0.372549, 0.372549, 0.372549, 1)
@@ -141,32 +109,35 @@ button_list = [["10W Solar Farm 75$", 75, 10, 0], ["15W Solar Farm 100$", 100, 1
 path = "farm"
 
 [node name="BuildWind" parent="." instance=ExtResource("16_pnu0i")]
-offset_left = 859.0
-offset_top = 266.0
-offset_right = 951.0
-offset_bottom = 316.0
+offset_left = 1298.0
+offset_top = 433.0
+offset_right = 1390.0
+offset_bottom = 483.0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_pressed_color = Color(0.372549, 0.372549, 0.372549, 1)
 button_list = [["Wind Farm 100$", 100, 10, 0]]
 path = "farm"
 
 [node name="BuildHydro" parent="." instance=ExtResource("16_pnu0i")]
-offset_left = 660.0
-offset_top = 368.0
-offset_right = 752.0
-offset_bottom = 418.0
+offset_left = 1087.0
+offset_top = 695.0
+offset_right = 1179.0
+offset_bottom = 745.0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_pressed_color = Color(0.372549, 0.372549, 0.372549, 1)
 button_list = [["200W Hydro 10 years", 200, 200], ["350W Hydro 15 years", 300, 350]]
 path = "build_process"
 
 [node name="BuildGas" parent="." instance=ExtResource("16_pnu0i")]
-offset_left = 438.0
-offset_top = 149.0
-offset_right = 486.0
-offset_bottom = 180.0
+offset_left = 585.0
+offset_top = 371.0
+offset_right = 674.0
+offset_bottom = 414.0
 button_list = [["Biomass Plant 100$", 100, 100, 100]]
 path = "energy_plant"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
 
 [editable path="Nuclear"]
 [editable path="Coal"]

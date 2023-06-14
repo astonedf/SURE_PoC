@@ -8,15 +8,16 @@ offset_left = 176.0
 offset_top = 8.0
 offset_right = 238.0
 offset_bottom = 34.0
+scale = Vector2(1.2, 1.2)
 size_flags_horizontal = 0
 text = "Energy :"
 script = ExtResource("1_8teth")
 
 [node name="Energy" type="ProgressBar" parent="."]
 layout_mode = 0
-offset_left = 70.0
+offset_left = 86.0
 offset_top = -2.0
-offset_right = 208.0
+offset_right = 224.0
 offset_bottom = 25.0
 theme_override_styles/fill = ExtResource("2_4gg5u")
 max_value = 1000.0

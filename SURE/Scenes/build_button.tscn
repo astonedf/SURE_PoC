@@ -6,8 +6,8 @@
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1046.0
-offset_bottom = -613.0
+offset_right = -1776.0
+offset_bottom = -994.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
@@ -16,16 +16,20 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.203922, 0.203922, 0.203922, 1)
 theme_override_font_sizes/font_size = 25
 text = "🔨"
-flat = true
 script = ExtResource("1_8bw42")
 button_list = [["name", 100, null], ["name", 50, null]]
 
-[node name="Control" type="VBoxContainer" parent="."]
+[node name="Control" type="Control" parent="."]
 visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Control2" type="VBoxContainer" parent="Control"]
 layout_mode = 0
-offset_left = -51.0
 offset_top = 43.0
 offset_right = 139.0
-offset_bottom = 144.0
+offset_bottom = 231.0
+alignment = 1
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -102,6 +102,7 @@ scale = Vector2(10, 10)
 texture = ExtResource("1_y3qam")
 
 [node name="Qs" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -203,7 +204,6 @@ theme_override_font_sizes/font_size = 25
 placeholder_text = "Name"
 
 [node name="Badges" parent="." instance=ExtResource("4_g8vnt")]
-visible = false
 layout_mode = 0
 offset_left = 124.0
 offset_top = 57.0

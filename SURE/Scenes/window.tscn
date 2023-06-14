@@ -36,11 +36,12 @@ layout_mode = 2
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel"]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 24.0
-offset_right = 1128.0
-offset_bottom = 624.0
+offset_left = 424.0
+offset_top = 216.0
+offset_right = 1528.0
+offset_bottom = 816.0
 color = Color(0.823529, 0.823529, 0.870588, 1)
+metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/ColorRect"]
 layout_mode = 0
