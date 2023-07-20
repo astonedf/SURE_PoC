@@ -1,9 +1,46 @@
-[gd_scene load_steps=5 format=3 uid="uid://bho2104p5e0rx"]
+[gd_scene load_steps=8 format=3 uid="uid://bho2104p5e0rx"]
 
 [ext_resource type="PackedScene" uid="uid://qnw77bjuu8jw" path="res://Scenes/char_select.tscn" id="1_3ecar"]
-[ext_resource type="Script" path="res://Scenes/avatar_creation.gd" id="1_5vj1s"]
-[ext_resource type="Texture2D" uid="uid://byjtw7q3281rv" path="res://Assets/People/people_6_d.png" id="1_y3qam"]
+[ext_resource type="Texture2D" uid="uid://cuw1crsi88u68" path="res://Assets/Borja/230601_CH_SUREgame_SKETCHES-AVATAR2.png" id="3_64bt6"]
+[ext_resource type="Texture2D" uid="uid://cxthwgyr75a67" path="res://slicedParty.png" id="4_2pqql"]
 [ext_resource type="PackedScene" uid="uid://25w3nfdvpncy" path="res://Scenes/badges.tscn" id="4_g8vnt"]
+
+[sub_resource type="Animation" id="Animation_qitp4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PartyCircle4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(361, 773)]
+}
+
+[sub_resource type="Animation" id="Animation_hdso2"]
+resource_name = "slide4"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../PartyCircle4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(361, 773), Vector2(370, 762)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l25vy"]
+_data = {
+"RESET": SubResource("Animation_qitp4"),
+"slide4": SubResource("Animation_hdso2")
+}
 
 [node name="AvatarCreation" type="Control"]
 layout_mode = 3
@@ -12,31 +49,33 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_5vj1s")
+mouse_filter = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = 24.0
-offset_top = 24.0
-offset_right = 552.0
-offset_bottom = -32.0
+offset_left = 128.0
+offset_top = 104.0
+offset_right = 736.0
+offset_bottom = -72.0
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer"]
 layout_mode = 2
+mouse_filter = 1
 color = Color(0.203922, 0.203922, 0.203922, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ColorRect"]
+visible = false
 layout_mode = 2
-offset_left = 648.0
-offset_top = 160.0
-offset_right = 776.0
-offset_bottom = 488.0
+offset_left = 856.0
+offset_top = 272.0
+offset_right = 984.0
+offset_bottom = 684.0
 
 [node name="Label" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
-custom_minimum_size = Vector2(0, 54)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Hair :"
@@ -44,7 +83,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
-custom_minimum_size = Vector2(0, 54)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Shirt :"
@@ -52,7 +91,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
-custom_minimum_size = Vector2(0, 54)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Legs :"
@@ -60,7 +99,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="Label4" type="Label" parent="MarginContainer/ColorRect/VBoxContainer"]
-custom_minimum_size = Vector2(0, 54)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Shoes :"
@@ -69,10 +108,10 @@ vertical_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/ColorRect"]
 layout_mode = 2
-offset_left = 808.0
-offset_top = 168.0
-offset_right = 936.0
-offset_bottom = 664.0
+offset_left = 792.0
+offset_top = 208.0
+offset_right = 984.0
+offset_bottom = 704.0
 
 [node name="CharSelect" parent="MarginContainer/ColorRect/VBoxContainer2" instance=ExtResource("1_3ecar")]
 layout_mode = 2
@@ -88,24 +127,34 @@ layout_mode = 2
 
 [node name="Button" type="Button" parent="MarginContainer/ColorRect"]
 layout_mode = 0
-offset_left = 200.0
-offset_top = 528.0
-offset_right = 320.0
-offset_bottom = 583.0
+offset_left = 896.0
+offset_top = 760.0
+offset_right = 1016.0
+offset_bottom = 815.0
 theme_override_font_sizes/font_size = 25
-text = "Next"
+text = "Create"
+
+[node name="Button2" type="Button" parent="MarginContainer/ColorRect"]
+layout_mode = 0
+offset_left = 824.0
+offset_top = 760.0
+offset_right = 880.0
+offset_bottom = 815.0
+theme_override_font_sizes/font_size = 25
+text = "🎲"
 
 [node name="Avatar" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(934, 304)
-scale = Vector2(10, 10)
-texture = ExtResource("1_y3qam")
+position = Vector2(1064, 496)
+texture = ExtResource("3_64bt6")
 
 [node name="Qs" type="Control" parent="."]
-visible = false
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 144.0
+offset_top = 88.0
+offset_right = 184.0
+offset_bottom = 128.0
+metadata/_edit_group_ = true
 
 [node name="Label7" type="SpinBox" parent="Qs"]
 custom_minimum_size = Vector2(0, 50)
@@ -127,42 +176,86 @@ offset_top = 209.0
 offset_right = 490.0
 offset_bottom = 259.0
 theme_override_font_sizes/font_size = 25
-item_count = 3
+item_count = 11
 popup/item_0/text = "Farmer"
 popup/item_0/id = 0
 popup/item_1/text = "Office Worker"
 popup/item_1/id = 1
 popup/item_2/text = "Lawyer"
 popup/item_2/id = 2
+popup/item_3/text = "Craftsperson"
+popup/item_3/id = 3
+popup/item_4/text = "Industrial worker"
+popup/item_4/id = 4
+popup/item_5/text = "Entrepreneur"
+popup/item_5/id = 5
+popup/item_6/text = "Public Sector"
+popup/item_6/id = 6
+popup/item_7/text = "Parent"
+popup/item_7/id = 7
+popup/item_8/text = "IT worker"
+popup/item_8/id = 8
+popup/item_9/text = "Other"
+popup/item_9/id = 9
+popup/item_10/text = "Not important"
+popup/item_10/id = 10
 
 [node name="Label" type="Label" parent="Qs"]
 layout_mode = 0
-offset_left = 170.0
+offset_left = 68.0
 offset_top = 72.0
-offset_right = 264.0
+offset_right = 162.0
 offset_bottom = 110.0
 theme_override_font_sizes/font_size = 25
 text = "Name : "
 
 [node name="Label2" type="Label" parent="Qs"]
 layout_mode = 0
-offset_left = 198.0
+offset_left = 67.0
 offset_top = 144.0
-offset_right = 292.0
+offset_right = 161.0
 offset_bottom = 182.0
 theme_override_font_sizes/font_size = 25
 text = "Age : "
 
 [node name="Label3" type="Label" parent="Qs"]
 layout_mode = 0
-offset_left = 118.0
+offset_left = 65.0
 offset_top = 216.0
-offset_right = 265.0
+offset_right = 234.0
 offset_bottom = 254.0
 theme_override_font_sizes/font_size = 25
-text = "Previous job : "
+text = "Profession : "
+
+[node name="Label4" type="Label" parent="Qs"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 304.0
+offset_right = 233.0
+offset_bottom = 342.0
+theme_override_font_sizes/font_size = 25
+text = "Salary range : "
+
+[node name="Label5" type="Label" parent="Qs"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 392.0
+offset_right = 237.0
+offset_bottom = 430.0
+theme_override_font_sizes/font_size = 25
+text = "Property : "
+
+[node name="Label9" type="Label" parent="Qs"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 528.0
+offset_right = 237.0
+offset_bottom = 566.0
+theme_override_font_sizes/font_size = 25
+text = "Political views : "
 
 [node name="HSlider" type="HSlider" parent="Qs"]
+visible = false
 layout_mode = 0
 offset_left = 69.0
 offset_top = 298.0
@@ -173,6 +266,7 @@ tick_count = 7
 ticks_on_borders = true
 
 [node name="Party" type="Label" parent="Qs"]
+visible = false
 layout_mode = 0
 offset_left = 64.0
 offset_top = 344.0
@@ -185,12 +279,13 @@ vertical_alignment = 1
 
 [node name="Def" type="Label" parent="Qs"]
 layout_mode = 0
-offset_left = 160.0
-offset_top = 385.0
-offset_right = 416.0
-offset_bottom = 464.0
-text = "State-centered, progressive, Strong environmental protection"
-horizontal_alignment = 1
+offset_left = 384.0
+offset_top = 688.0
+offset_right = 640.0
+offset_bottom = 767.0
+text = "State-centered, 
+Progressive, 
+Environmentalist"
 autowrap_mode = 3
 
 [node name="Label6" type="LineEdit" parent="Qs"]
@@ -198,17 +293,139 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 offset_left = 280.0
 offset_top = 64.0
-offset_right = 408.0
+offset_right = 488.0
 offset_bottom = 114.0
 theme_override_font_sizes/font_size = 25
 placeholder_text = "Name"
 
-[node name="Badges" parent="." instance=ExtResource("4_g8vnt")]
+[node name="HSlider2" type="HSlider" parent="Qs"]
 layout_mode = 0
-offset_left = 124.0
-offset_top = 57.0
-offset_right = 452.0
-offset_bottom = 523.0
+offset_left = 264.0
+offset_top = 312.0
+offset_right = 512.0
+offset_bottom = 328.0
+scrollable = false
+tick_count = 5
+ticks_on_borders = true
+
+[node name="Label" type="Label" parent="Qs/HSlider2"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = 26.0
+offset_right = 35.0
+offset_bottom = 49.0
+text = "Poor    Low    Middle    Upper    Rich"
+
+[node name="CheckBox" type="CheckBox" parent="Qs"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 400.0
+offset_right = 256.0
+offset_bottom = 424.0
+text = " House"
+
+[node name="CheckBox2" type="CheckBox" parent="Qs"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 440.0
+offset_right = 256.0
+offset_bottom = 464.0
+text = " Car"
+
+[node name="CheckBox3" type="CheckBox" parent="Qs"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 480.0
+offset_right = 256.0
+offset_bottom = 504.0
+text = " Electric car"
+
+[node name="CheckBox4" type="CheckBox" parent="Qs"]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 400.0
+offset_right = 463.0
+offset_bottom = 431.0
+text = " with solar panels"
+
+[node name="PartyCircle" type="Sprite2D" parent="."]
+position = Vector2(320, 896)
+scale = Vector2(0.407246, 0.407246)
+texture = ExtResource("4_2pqql")
+
+[node name="PartyCircle2" type="Sprite2D" parent="."]
+position = Vector2(256, 848)
+rotation = 1.25664
+scale = Vector2(0.407246, 0.407246)
+texture = ExtResource("4_2pqql")
+
+[node name="PartyCircle3" type="Sprite2D" parent="."]
+position = Vector2(281, 772)
+rotation = 2.51327
+scale = Vector2(0.407246, 0.407246)
+texture = ExtResource("4_2pqql")
+
+[node name="PartyCircle4" type="Sprite2D" parent="."]
+position = Vector2(361, 773)
+rotation = 3.76991
+scale = Vector2(0.407246, 0.407246)
+texture = ExtResource("4_2pqql")
+
+[node name="PartyCircle5" type="Sprite2D" parent="."]
+position = Vector2(385, 849)
+rotation = 5.02655
+scale = Vector2(0.407246, 0.407246)
+texture = ExtResource("4_2pqql")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(361, 773)
+rotation = -2.51327
+scale = Vector2(0.407246, 0.407246)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-3.42993, -0.543274)
+polygon = PackedVector2Array(7.83972, -160.49, 184.468, 78.4394, 50.1277, 127.48, -48.0818, 125.989, -153.492, 81.1665)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../PartyCircle")
+libraries = {
+"": SubResource("AnimationLibrary_l25vy")
+}
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1384.0
+offset_top = 96.0
+offset_right = 1856.0
+offset_bottom = 1016.0
+
+[node name="Badges" parent="Panel" instance=ExtResource("4_g8vnt")]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 112.0
+offset_right = 400.0
+offset_bottom = 752.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 48.0
+offset_right = 281.0
+offset_bottom = 86.0
+theme_override_font_sizes/font_size = 25
+text = "Badge"
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 776.0
+offset_right = 376.0
+offset_bottom = 872.0
+theme_override_font_sizes/font_size = 20
+text = "Definition of the chosen badge
+..."
+autowrap_mode = 3
 
 [connection signal="pressed" from="MarginContainer/ColorRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ColorRect/Button2" to="." method="_on_button_pressed"]
 [connection signal="value_changed" from="Qs/HSlider" to="." method="_on_h_slider_value_changed"]

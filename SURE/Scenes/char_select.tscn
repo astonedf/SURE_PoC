@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://qnw77bjuu8jw"]
 
 [node name="CharSelect" type="Control"]
-custom_minimum_size = Vector2(0, 55)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 3
 anchor_right = 0.181
 anchor_bottom = 0.049
-offset_right = -0.512009
-offset_bottom = 12.248
+offset_right = 20.48
+offset_bottom = 12.08
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -37,7 +37,7 @@ text = "<"
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
-offset_left = 192.0
-offset_right = 210.0
+offset_left = 304.0
+offset_right = 322.0
 offset_bottom = 40.0
 text = ">"

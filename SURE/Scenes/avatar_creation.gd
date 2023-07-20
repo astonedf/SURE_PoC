@@ -37,3 +37,18 @@ func _on_h_slider_value_changed(value):
 
 func _on_button_pressed():
 	pass # Replace with function body.
+
+
+func _on_area_2d_mouse_entered():
+	$AnimationPlayer.play("slide4")
+
+
+
+
+func _on_area_2d_mouse_exited():
+	$AnimationPlayer.play_backwards("slide4")
+
+
+func _on_area_2d_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton:
+		$PartyCircle4.self_modulate = Color(1,0,1,1)

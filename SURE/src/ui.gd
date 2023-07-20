@@ -4,7 +4,7 @@ extends CanvasLayer
 @export var env: int = 0
 @export var trust: int = 0
 
-@export var budget: int = 1000
+@export var budget: int = 1500
 var money: int
 @export var prod: int = 0
 var build: int = 0

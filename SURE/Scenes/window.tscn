@@ -506,17 +506,26 @@ text = "📉"
 
 [node name="Popup" type="Panel" parent="MarginContainer/Panel"]
 unique_name_in_owner = true
-visible = false
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ColorRect2" type="ColorRect" parent="MarginContainer/Panel/Popup"]
-layout_mode = 0
-offset_left = 360.0
-offset_top = 144.0
-offset_right = 832.0
-offset_bottom = 504.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -236.0
+offset_top = -180.0
+offset_right = 236.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Text" type="Label" parent="MarginContainer/Panel/Popup/ColorRect2"]
 layout_mode = 0
@@ -576,10 +585,10 @@ text = "Try to Implement"
 
 [node name="CheckButton" type="Button" parent="MarginContainer/Panel/Popup"]
 layout_mode = 0
-offset_left = 560.0
-offset_top = 212.0
-offset_right = 609.0
-offset_bottom = 243.0
+offset_left = 904.0
+offset_top = 432.0
+offset_right = 953.0
+offset_bottom = 463.0
 focus_mode = 0
 toggle_mode = true
 keep_pressed_outside = true
@@ -587,10 +596,10 @@ text = "LVL 1"
 
 [node name="CheckButton2" type="Button" parent="MarginContainer/Panel/Popup"]
 layout_mode = 0
-offset_left = 610.0
-offset_top = 212.0
-offset_right = 659.0
-offset_bottom = 243.0
+offset_left = 954.0
+offset_top = 432.0
+offset_right = 1003.0
+offset_bottom = 463.0
 focus_mode = 0
 toggle_mode = true
 keep_pressed_outside = true
@@ -598,10 +607,10 @@ text = "LVL 2"
 
 [node name="CheckButton3" type="Button" parent="MarginContainer/Panel/Popup"]
 layout_mode = 0
-offset_left = 660.0
-offset_top = 212.0
-offset_right = 709.0
-offset_bottom = 243.0
+offset_left = 1004.0
+offset_top = 432.0
+offset_right = 1053.0
+offset_bottom = 463.0
 focus_mode = 0
 toggle_mode = true
 keep_pressed_outside = true
